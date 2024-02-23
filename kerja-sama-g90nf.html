@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="in">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111111">
+    <meta property="og:title" content="Kerja Sama Dengan G90NF">
+    <meta property="og:description" content="Yuk kerrja sama bersama G90NF dengan mengisi formulir berikut ini!">
+    <meta name="keywords" content="universebima, Universe Bima, Bima">
+    <meta property="og:image" content="https://i.imgur.com/ZykwwOE.jpeg">
+    <link rel="shortcut icon" href="https://i.imgur.com/ggIjVZ6.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/55100b01de.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="script.js"></script>
+    <title>Pemilu</title>
+</head>
+<body>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Aladin&family=Asap&family=Audiowide&family=Lemon&family=Nunito&family=Protest+Revolution&display=swap');
+        body {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: url('https://i.imgur.com/ggIjVZ6.jpeg');
+            background-position: center;
+            background-size: 300%;
+        }
+        
+        .reportdiv {
+        box-shadow: 0px 0px 10px #000;
+        color: #fff;
+        background: #0000004b;
+        border-radius: 10px;
+        margin: 20px;
+        padding: 20px;
+        width: 80%;
+        height: 70%;
+        overflow: scroll;
+        backdrop-filter: blur(10px);
+        transition: 1s;
+    }
+    
+    .reportdiv > form > .isiform {
+        width: 90%;
+        padding: 10px;
+        border: 2px solid #ccc;
+        margin: 10px;
+        border-radius: 10px;
+        outline: none;
+        transition: 1s;
+    }
+    
+    .reportdiv > form > .isiform:hover {
+        border: 2px solid #486fd9;
+        transition: 1s;
+    }
+    
+    .reportdiv > form > .textareaform {
+        width: 90%;
+        height: 100px;
+        padding: 10px;
+        border: 2px solid #ccc;
+        margin: 10px;
+        border-radius: 10px;
+        outline: none;
+        transition: 1s;
+    }
+    
+    .reportdiv > form > .textareaform:hover {
+        border: 2px solid #a00d0d;
+        box-shadow: 0px 0px 10px #a00d0d;
+        transition: 1s;
+    }
+    
+    .reportdiv > form > .submitformyakin {
+        width: 90%;
+        padding: 10px;
+        border: 2px solid #b90f0f;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        outline: none;
+        background: #fff;
+        color: #111;
+        font-family: 'Lemon', serif;
+    }
+    
+    .reportdiv > form > .submitform {
+        width: 90%;
+        padding: 10px;
+        border: 2px solid #2d2d2d;
+        margin: 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+        outline: none;
+        background: #fff;
+        color: #111;
+        font-family: 'Lemon', serif;
+    }
+    
+    .inputradiodiv {
+        background: #ffffff43;
+        margin : 10px;
+        border-radius: 10px;
+        aligh-item: center;
+        height: 50px;
+        padding: 50px;
+    }
+    
+    .inputradiodiv > label {
+        display: block;
+    }
+    
+    input[type="radio"] {
+        display: none;
+    }
+    
+    button {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px 100px;
+        border: 2px solid #2d2d2d;
+        margin: 10px;
+        border-radius: 10px;
+        background: #fff;
+        color: #111;
+        font-family: 'Lemon', serif;
+    }
+    
+    </style>
+    
+    
+    <div style="display: block;" id="formContainer" class="reportdiv">
+        <img style="width: 100px; border-radius:15px;" src="https://i.imgur.com/ggIjVZ6.jpeg" alt="Bima">
+        <h1 style="color: #fff; font-family: 'Audiowide', sans-serif; font-size: 20px;">Kerja Sama Dengan G90NF</h1>
+        <p style="font-size: 10px; color: #fff; font-family: 'Nunito', sans-serif;">Yuk kerrja sama bersama G90NF dengan mengisi formulir berikut ini!</p>
+        <form id="myform" onsubmit="return sendEmail()">
+            <input id="form_name" class="isiform" type="text" name="nama" placeholder="Masukkan Nama...">
+            <input class="isiform" id="form_organization" class="isiform" type="text" name="namanegaraform" placeholder="Masukkan Nama Organisasi...">
+            <select class="isiform" id="form_jenisorganisasi" name="jenisorganisasi">
+                <option value="Jenis Organisasi"> Jenis Organisasi </option>
+                <option value="Grup"> Group </option>
+                <option value="Komunitas"> Komunitas </option>
+                <option value="Universe"> Universe </option>
+                <option value="Sosial"> Sosial </option>
+                <option value="Other"> Other </option>
+            </select>
+            <input class="isiform" id="form_tujuanorganisasi" class="isiform" type="text" name="form_tujuanorganisasi" placeholder="Masukkan Tujuan Organisasi Anda...">
+            <input class="isiform" id="form_jumlahaggota" class="isiform" type="number" name="form_jumlahaggota" placeholder="Masukkan Nomor Telepon...">
+            <input class="isiform" type="email" name="emailform" placeholder="Masukkan Email...">
+            <input class="isiform" id="form_pemilik" class="isiform" type="text" name="form_pemilik" placeholder="Masukkan Nama Pemilik...">
+            <input class="isiform" id="form_pengirim" class="isiform" type="text" name="form_pengirim" placeholder="Masukkan Apa Jabatan Anda?...">
+            <input class="isiform" id="form_nomor_pemilik" class="isiform" type="number" name="form_nomor_pemilik" placeholder="Masukkan Nomor Pemilik...">
+            <textarea id="tujuan_kerja_sama" class="textareaform" name="textareaform" placeholder="Jelaskan mengapa anda ingin bekerja sama dengan G90NF..."></textarea>
+            <span class="submitformyakin">Daftar</span>
+            <input style="display: none;" onclick="submitForm()" class="submitform" type="submit" value="Mari Kerja Sama">
+        </form>
+    </div>
+    
+    <div style="display: none;" id="tampilanSetelahKirim" class="reportdiv">
+        <h1 style="color: #fff; font-family: 'Audiowide', sans-serif;"> THANKS <i style="color: #ff4040" class="fa fa-heart"></i></h1>
+        <p style="font-size: 10px; color: #fff; font-family: 'Nunito', sans-serif;">Ok, Terima kasih telah mengisi formulir tunggu beberapa hari nanti pihak G90NF akan mengirimkan email untuk meminta link grup organisasi Terima Kasih!</p>
+        <button onclick="window.close()" class="button">Keluar</button>
+    </div>
+    
+    <script>
+    
+    window.onload = function() {
+  var lastSubmission = getCookie('lastSubmission');
+  if (lastSubmission) {
+    lastSubmission = new Date(lastSubmission);
+    var now = new Date();
+    var diff = now - lastSubmission;
+    var threeDaysInMs = 3 * 24 * 60 * 60 * 1000;
+    
+    if (diff < threeDaysInMs) {
+      // Jika pengguna telah mengirim form dalam 3 hari terakhir, sembunyikan form dan tampilkan div
+      document.getElementById('formContainer').style.display = 'none';
+      document.getElementById('tampilanSetelahKirim').style.display = 'block';
+    }
+  }
+};
+
+function submitForm() {
+  var lastSubmission = getCookie('lastSubmission');
+  
+  if (lastSubmission) {
+    var lastSubmissionDate = new Date(lastSubmission);
+    var now = new Date();
+    var diff = now - lastSubmissionDate;
+    var threeDaysInMs = 1 * 24 * 60 * 60 * 1000;
+    
+    if (diff < threeDaysInMs) {
+      alert('Maaf, Anda hanya dapat mengirim form sekali dalam 3 hari.');
+      return;
+    }
+  }
+  
+  // Simpan informasi pengiriman terakhir di cookie
+  var now = new Date();
+  document.cookie = "lastSubmission=" + now + "; max-age=" + (3 * 24 * 60 * 60);
+  
+  // Sembunyikan form dan tampilkan div setelah pengiriman form
+  document.getElementById('formContainer').style.display = 'none';
+  document.getElementById('tampilanSetelahKirim').style.display = 'block';
+}
+
+function getCookie(name) {
+  var cookies = document.cookie.split(';');
+  for (var i = 0; i < cookies.length; i++) {
+    var cookie = cookies[i].trim();
+    if (cookie.indexOf(name) === 0) {
+      return cookie.substring(name.length + 1);
+    }
+  }
+  return null;
+}
+
+
+
+
+
+
+(function(){
+        emailjs.init("ux3Dbooqg-wyhogLN");
+    })();
+
+    function sendEmail() {
+        emailjs.send("service_5seaha4", "template_0pk6sda", {
+            form_name: document.getElementById("form_name").value,
+            form_organization: document.getElementById("form_organization").value,
+            form_jenisorganisasi: document.getElementById("form_jenisorganisasi").value,
+            form_tujuanorganisasi: document.getElementById("form_tujuanorganisasi").value,
+            form_jumlahaggota: document.getElementById("form_jumlahaggota").value,
+            form_pemilik: document.getElementById("form_pemilik").value,
+            form_pengirim: document.getElementById("form_pengirim").value,
+            form_nomor_pemilik: document.getElementById("form_nomor_pemilik").value,
+            form_email: document.getElementById("form_email").value,
+            tujuan_kerja_sama: document.getElementById("tujuan_kerja_sama").value,
+        })
+        .then(function(response) {
+            console.log("Email successfully sent!", response);
+            alert("Your message has been sent successfully!");
+            document.getElementById("myform").reset();
+        }, function(error) {
+            console.error("Email sending failed:", error);
+            alert("Oops! Something went wrong. Please try again later.");
+        });
+        return false; // Prevents the default form submission
+    }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector(".submitformyakin").addEventListener("click", function() {
+    document.querySelector(".submitform").style.display = "block";
+  });
+});
+    </script>
+
+</body>
+</html>
