@@ -158,8 +158,7 @@
             <input class="isiform" id="form_pengirim" class="isiform" type="text" name="form_pengirim" placeholder="Masukkan Apa Jabatan Anda?...">
             <input class="isiform" id="form_nomor_pemilik" class="isiform" type="number" name="form_nomor_pemilik" placeholder="Masukkan Nomor Pemilik...">
             <textarea id="tujuan_kerja_sama" class="textareaform" name="textareaform" placeholder="Jelaskan mengapa anda ingin bekerja sama dengan G90NF..."></textarea>
-            <span class="submitformyakin">Daftar</span>
-            <input style="display: none;" onclick="submitForm()" class="submitform" type="submit" value="Mari Kerja Sama">
+            <input onclick="submitForm()" class="submitform" type="submit" value="Mari Kerja Sama">
         </form>
     </div>
     
@@ -177,7 +176,7 @@
     lastSubmission = new Date(lastSubmission);
     var now = new Date();
     var diff = now - lastSubmission;
-    var threeDaysInMs = 3 * 24 * 60 * 60 * 1000;
+    var threeDaysInMs = 1 * 24 * 60 * 60 * 1000;
     
     if (diff < threeDaysInMs) {
       // Jika pengguna telah mengirim form dalam 3 hari terakhir, sembunyikan form dan tampilkan div
@@ -204,7 +203,7 @@ function submitForm() {
   
   // Simpan informasi pengiriman terakhir di cookie
   var now = new Date();
-  document.cookie = "lastSubmission=" + now + "; max-age=" + (3 * 24 * 60 * 60);
+  document.cookie = "lastSubmission=" + now + "; max-age=" + (1 * 24 * 60 * 60);
   
   // Sembunyikan form dan tampilkan div setelah pengiriman form
   document.getElementById('formContainer').style.display = 'none';
@@ -228,7 +227,7 @@ function getCookie(name) {
 
 
 (function(){
-        emailjs.init("ux3Dbooqg-wyhogLN");
+        emailjs.init("_pZrFYLuU5hifZJ9t");
     })();
 
     function sendEmail() {
@@ -255,11 +254,7 @@ function getCookie(name) {
         return false; // Prevents the default form submission
     }
     
-    document.addEventListener("DOMContentLoaded", function() {
-  document.querySelector(".submitformyakin").addEventListener("click", function() {
-    document.querySelector(".submitform").style.display = "block";
-  });
-});
+    
     </script>
 
 </body>
