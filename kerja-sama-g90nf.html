@@ -141,7 +141,7 @@
         <h1 style="color: #fff; font-family: 'Audiowide', sans-serif; font-size: 20px;">Kerja Sama Dengan G90NF</h1>
         <p style="font-size: 10px; color: #fff; font-family: 'Nunito', sans-serif;">Yuk kerrja sama bersama G90NF dengan mengisi formulir berikut ini!</p>
         <form id="myform" action="https://formspree.io/f/mdoqzbgq"
-  method="POST" onsubmit="return sendEmail()">
+  method="POST">
             <input id="form_name" class="isiform" type="text" name="nama" placeholder="Masukkan Nama...">
             <input class="isiform" id="form_organization" class="isiform" type="text" name="namanegaraform" placeholder="Masukkan Nama Organisasi...">
             <select class="isiform" id="form_jenisorganisasi" name="jenisorganisasi">
@@ -159,7 +159,7 @@
             <input class="isiform" id="form_pengirim" class="isiform" type="text" name="form_pengirim" placeholder="Masukkan Apa Jabatan Anda?...">
             <input class="isiform" id="form_nomor_pemilik" class="isiform" type="number" name="form_nomor_pemilik" placeholder="Masukkan Nomor Pemilik...">
             <textarea id="tujuan_kerja_sama" class="textareaform" name="textareaform" placeholder="Jelaskan mengapa anda ingin bekerja sama dengan G90NF..."></textarea>
-            <input onclick="submitForm()" class="submitform" type="submit" value="Mari Kerja Sama">
+            <input class="submitform" type="submit" value="Mari Kerja Sama">
         </form>
     </div>
     
@@ -227,35 +227,7 @@ function getCookie(name) {
 
 
 
-(function(){
-        emailjs.init("_pZrFYLuU5hifZJ9t");
-    })();
 
-    function sendEmail() {
-        emailjs.send("service_5seaha4", "template_0pk6sda", {
-            form_name: document.getElementById("form_name").value,
-            form_organization: document.getElementById("form_organization").value,
-            form_jenisorganisasi: document.getElementById("form_jenisorganisasi").value,
-            form_tujuanorganisasi: document.getElementById("form_tujuanorganisasi").value,
-            form_jumlahaggota: document.getElementById("form_jumlahaggota").value,
-            form_pemilik: document.getElementById("form_pemilik").value,
-            form_pengirim: document.getElementById("form_pengirim").value,
-            form_nomor_pemilik: document.getElementById("form_nomor_pemilik").value,
-            form_email: document.getElementById("form_email").value,
-            tujuan_kerja_sama: document.getElementById("tujuan_kerja_sama").value,
-        })
-        .then(function(response) {
-            console.log("Email successfully sent!", response);
-            alert("Your message has been sent successfully!");
-            document.getElementById("myform").reset();
-        }, function(error) {
-            console.error("Email sending failed:", error);
-            alert("Oops! Something went wrong. Please try again later.");
-        });
-        return false; // Prevents the default form submission
-    }
-    
-    
     </script>
 
 </body>
