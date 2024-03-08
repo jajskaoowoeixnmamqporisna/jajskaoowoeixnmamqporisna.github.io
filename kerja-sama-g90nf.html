@@ -228,6 +228,11 @@ function getCookie(name) {
   return null;
 }
 
+function onSubmit(token) {
+    // Callback function dipanggil setelah verifikasi reCAPTCHA berhasil
+    document.getElementById('submitBtn').disabled = false; // Aktifkan tombol "Mari Kerja Sama"
+        }
+
 document.getElementById("myform").addEventListener("submit", function(event) {
     event.preventDefault(); // Menghentikan pengiriman formulir secara default
     grecaptcha.execute(); // Memulai verifikasi reCAPTCHA
