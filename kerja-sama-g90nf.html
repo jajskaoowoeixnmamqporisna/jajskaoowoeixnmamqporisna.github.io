@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/55100b01de.js" crossorigin="anonymous"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="script.js"></script>
     <title>Kerja Sama Dengan G90NF</title>
 </head>
@@ -58,6 +59,10 @@
     .reportdiv > form > .isiform:hover {
         border: 2px solid #486fd9;
         transition: 1s;
+    }
+    
+    .reportdiv > form > .g-recaptcha {
+        transform: translate(7%, 0%);
     }
     
     .reportdiv > form > .textareaform {
@@ -159,6 +164,7 @@
             <input class="isiform" id="form_pengirim" class="isiform" type="text" name="form_pengirim" placeholder="Masukkan Apa Jabatan Anda?...">
             <input class="isiform" id="form_nomor_pemilik" class="isiform" type="number" name="form_nomor_pemilik" placeholder="Masukkan Nomor Pemilik...">
             <textarea id="tujuan_kerja_sama" class="textareaform" name="textareaform" placeholder="Jelaskan mengapa anda ingin bekerja sama dengan G90NF..."></textarea>
+            <div class="g-recaptcha" data-sitekey="6LdvypEpAAAAAB_utCH37aAi0ecBBcfSU9sbDf48" data-callback="onSubmit" data-size="normal"></div>
             <input class="submitform" type="submit" value="Mari Kerja Sama">
         </form>
     </div>
@@ -222,7 +228,10 @@ function getCookie(name) {
   return null;
 }
 
-
+document.getElementById("myform").addEventListener("submit", function(event) {
+    event.preventDefault(); // Menghentikan pengiriman formulir secara default
+    grecaptcha.execute(); // Memulai verifikasi reCAPTCHA
+});
 
 
 
