@@ -165,7 +165,7 @@
             <input class="isiform" id="form_nomor_pemilik" class="isiform" type="number" name="form_nomor_pemilik" placeholder="Masukkan Nomor Pemilik...">
             <textarea id="tujuan_kerja_sama" class="textareaform" name="textareaform" placeholder="Jelaskan mengapa anda ingin bekerja sama dengan G90NF..."></textarea>
             <div class="g-recaptcha" data-sitekey="6LdvypEpAAAAAB_utCH37aAi0ecBBcfSU9sbDf48" data-callback="onSubmit" data-size="normal"></div>
-            <input class="submitform" type="submit" value="Mari Kerja Sama">
+            <input id="submitBtn" class="submitform" type="submit" value="Mari Kerja Sama">
         </form>
     </div>
     
@@ -178,60 +178,60 @@
     <script>
     
     window.onload = function() {
-  var lastSubmission = getCookie('lastSubmission');
-  if (lastSubmission) {
-    lastSubmission = new Date(lastSubmission);
-    var now = new Date();
-    var diff = now - lastSubmission;
-    var threeDaysInMs = 1 * 24 * 60 * 60 * 1000;
-    
-    if (diff < threeDaysInMs) {
-      // Jika pengguna telah mengirim form dalam 3 hari terakhir, sembunyikan form dan tampilkan div
-      document.getElementById('formContainer').style.display = 'none';
-      document.getElementById('tampilanSetelahKirim').style.display = 'block';
+    var lastSubmission = getCookie('lastSubmission');
+    if (lastSubmission) {
+        lastSubmission = new Date(lastSubmission);
+        var now = new Date();
+        var diff = now - lastSubmission;
+        var threeDaysInMs = 1 * 24 * 60 * 60 * 1000;
+
+        if (diff < threeDaysInMs) {
+            // Jika pengguna telah mengirim form dalam 3 hari terakhir, sembunyikan form dan tampilkan div
+            document.getElementById('formContainer').style.display = 'none';
+            document.getElementById('tampilanSetelahKirim').style.display = 'block';
+        }
     }
-  }
 };
 
 function submitForm() {
-  var lastSubmission = getCookie('lastSubmission');
-  
-  if (lastSubmission) {
-    var lastSubmissionDate = new Date(lastSubmission);
-    var now = new Date();
-    var diff = now - lastSubmissionDate;
-    var threeDaysInMs = 1 * 24 * 60 * 60 * 1000;
-    
-    if (diff < threeDaysInMs) {
-      alert('Maaf, Anda hanya dapat mengirim form sekali dalam 3 hari.');
-      return;
+    var lastSubmission = getCookie('lastSubmission');
+
+    if (lastSubmission) {
+        var lastSubmissionDate = new Date(lastSubmission);
+        var now = new Date();
+        var diff = now - lastSubmissionDate;
+        var threeDaysInMs = 1 * 24 * 60 * 60 * 1000;
+
+        if (diff < threeDaysInMs) {
+            alert('Maaf, Anda hanya dapat mengirim form sekali dalam 3 hari.');
+            return;
+        }
     }
-  }
-  
-  // Simpan informasi pengiriman terakhir di cookie
-  var now = new Date();
-  document.cookie = "lastSubmission=" + now + "; max-age=" + (1 * 24 * 60 * 60);
-  
-  // Sembunyikan form dan tampilkan div setelah pengiriman form
-  document.getElementById('formContainer').style.display = 'none';
-  document.getElementById('tampilanSetelahKirim').style.display = 'block';
+
+    // Simpan informasi pengiriman terakhir di cookie
+    var now = new Date();
+    document.cookie = "lastSubmission=" + now + "; max-age=" + (1 * 24 * 60 * 60);
+
+    // Sembunyikan form dan tampilkan div setelah pengiriman form
+    document.getElementById('formContainer').style.display = 'none';
+    document.getElementById('tampilanSetelahKirim').style.display = 'block';
 }
 
 function getCookie(name) {
-  var cookies = document.cookie.split(';');
-  for (var i = 0; i < cookies.length; i++) {
-    var cookie = cookies[i].trim();
-    if (cookie.indexOf(name) === 0) {
-      return cookie.substring(name.length + 1);
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.indexOf(name) === 0) {
+            return cookie.substring(name.length + 1);
+        }
     }
-  }
-  return null;
+    return null;
 }
 
 function onSubmit(token) {
     // Callback function dipanggil setelah verifikasi reCAPTCHA berhasil
     document.getElementById('submitBtn').disabled = false; // Aktifkan tombol "Mari Kerja Sama"
-        }
+}
 
 document.getElementById("myform").addEventListener("submit", function(event) {
     event.preventDefault(); // Menghentikan pengiriman formulir secara default
