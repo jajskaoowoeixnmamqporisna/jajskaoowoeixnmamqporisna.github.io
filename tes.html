@@ -3,34 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Google reCAPTCHA Example</title>
+<title>reCAPTCHA Example</title>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script>
-function onSubmit(token) {
-  // Di sini Anda dapat menambahkan logika untuk melanjutkan ke langkah berikutnya setelah verifikasi reCAPTCHA berhasil
-  alert("reCAPTCHA verified! Proceed to the next step.");
-}
-function validateForm() {
-  var response = grecaptcha.getResponse();
-  if(response.length == 0) {
-    // Jika reCAPTCHA belum diverifikasi
-    alert("Mohon verifikasi reCAPTCHA!");
-    return false;
-  } else {
-    // Jika reCAPTCHA telah diverifikasi
-    onSubmit(response); // Panggil fungsi onSubmit dengan token reCAPTCHA
-    return false; // Return false agar formulir tidak langsung dikirim, menunggu verifikasi reCAPTCHA
-  }
-}
-</script>
 </head>
 <body>
-
-<form id="myForm" action="#" method="post" onsubmit="return validateForm()">
-  <!-- Masukkan elemen-elemen formulir di sini -->
-  <div class="g-recaptcha" data-sitekey="6LdvypEpAAAAAB_utCH37aAi0ecBBcfSU9sbDf48" data-callback="onSubmit"></div>
-  <button type="submit">Submit</button>
+<form id="myForm">
+  <div class="g-recaptcha" data-sitekey="6LdvypEpAAAAAB_utCH37aAi0ecBBcfSU9sbDf48"></div>
+  <br/>
+  <button type="button" id="apakahandayakin" disabled>Klik</button>
+  <button type="submit" id="submitBtn" style="display: none;">Submit</button>
 </form>
 
+<script>
+function enableButton() {
+  document.getElementById("apakahandayakin").disabled = false;
+}
+
+function verifyCaptcha() {
+  var response = grecaptcha.getResponse();
+  if (response.length === 0) {
+    alert("Mohon verifikasi reCAPTCHA terlebih dahulu!");
+    return false;
+  } else {
+    document.getElementById("submitBtn").style.display = "block";
+    return true;
+  }
+}
+
+document.getElementById("apakahandayakin").addEventListener("click", function() {
+  if (verifyCaptcha()) {
+    alert("Tombol berhasil diaktifkan!");
+    // Tambahkan tindakan lain di sini jika diperlukan
+  }
+});
+</script>
 </body>
 </html>
