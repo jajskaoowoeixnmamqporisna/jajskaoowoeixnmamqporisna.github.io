@@ -8,7 +8,7 @@
 </head>
 <body>
 <form id="myForm">
-  <div class="g-recaptcha" data-sitekey="6LdvypEpAAAAAB_utCH37aAi0ecBBcfSU9sbDf48"></div>
+  <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY" data-callback="enableButton"></div>
   <br/>
   <button type="button" id="apakahandayakin" disabled>Klik</button>
   <button type="submit" id="submitBtn" style="display: none;">Submit</button>
@@ -19,22 +19,9 @@ function enableButton() {
   document.getElementById("apakahandayakin").disabled = false;
 }
 
-function verifyCaptcha() {
-  var response = grecaptcha.getResponse();
-  if (response.length === 0) {
-    alert("Mohon verifikasi reCAPTCHA terlebih dahulu!");
-    return false;
-  } else {
-    document.getElementById("submitBtn").style.display = "block";
-    return true;
-  }
-}
-
 document.getElementById("apakahandayakin").addEventListener("click", function() {
-  if (verifyCaptcha()) {
-    alert("Tombol berhasil diaktifkan!");
-    // Tambahkan tindakan lain di sini jika diperlukan
-  }
+  alert("Tombol berhasil di klik!");
+  // Tambahkan tindakan lain di sini jika diperlukan
 });
 </script>
 </body>
