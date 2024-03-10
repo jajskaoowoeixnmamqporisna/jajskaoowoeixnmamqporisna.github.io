@@ -3,25 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>reCAPTCHA Example</title>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
-<body>
-<form id="myForm">
-  <div class="g-recaptcha" data-sitekey="6LdvypEpAAAAAB_utCH37aAi0ecBBcfSU9sbDf48" data-callback="enableButton"></div>
-  <br/>
-  <button type="button" id="apakahandayakin" disabled>Klik</button>
-  <button type="submit" id="submitBtn" style="display: none;">Submit</button>
-</form>
-
-<script>
-function enableButton() {
-  document.getElementById("apakahandayakin").disabled = false;
+<script src="script.js"></script>
+<link rel="stylesheet" href="style.css">
+<title>Transisi saat Elemen Terlihat</title>
+<style>
+    
+    [kezttransition1] {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
-document.getElementById("apakahandayakin").addEventListener("click", function() {
-  document.getElementById("submitBtn").style.display = "block";
-});
-</script>
+[kezttransition2] {
+    opacity: 0;
+    transform: translateX(10%);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+[kezttransition3] {
+    opacity: 0;
+    transform: translateX(-10%);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+[kezttransition4] {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+  
+  div {
+       margin-top: 150px;
+  }
+</style>
+</head>
+<body>
+  <div kezttransition1>Transition bawah ke atas</div>
+  <div kezttransition2>Transition kanan ke kiri</div>
+  <div kezttransition3>Transition kiri ke kanan</div>
+  <div kezttransition4>Transition atas ke bawah</div>
+  
+  
+  <script>
+      function showOnScroll() {
+    const kezttransition1 = document.querySelectorAll('[kezttransition1]');
+    kezttransition1.forEach(function(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        if (rect.top >= 0 && rect.bottom <= windowHeight) {
+            element.style.opacity = 1;
+            element.style.transform = 'translateY(0)';
+        }
+    });
+
+    const kezttransition2 = document.querySelectorAll('[kezttransition2]');
+    kezttransition2.forEach(function(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        if (rect.top >= 0 && rect.bottom <= windowHeight) {
+            element.style.opacity = 1;
+            element.style.transform = 'translateX(0)';
+        }
+    });
+    
+    const kezttransition3 = document.querySelectorAll('[kezttransition3]');
+    kezttransition3.forEach(function(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        if (rect.top >= 0 && rect.bottom <= windowHeight) {
+            element.style.opacity = 1;
+            element.style.transform = 'translateX(0)';
+        }
+    });
+    
+    const kezttransition4 = document.querySelectorAll('[kezttransition4]');
+    kezttransition4.forEach(function(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        if (rect.top >= 0 && rect.bottom <= windowHeight) {
+            element.style.opacity = 1;
+            element.style.transform = 'translateY(0)';
+        }
+    });
+}
+
+window.addEventListener('scroll', showOnScroll);
+window.addEventListener('DOMContentLoaded', showOnScroll);
+  </script>
 </body>
 </html>
