@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/55100b01de.js" crossorigin="anonymous"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="script.js"></script>
     <title>Kerja Sama Dengan G90NF</title>
 </head>
@@ -59,10 +58,6 @@
     .reportdiv > form > .isiform:hover {
         border: 2px solid #486fd9;
         transition: 1s;
-    }
-    
-    .reportdiv > form > .g-recaptcha {
-        transform: translate(7%, 0%);
     }
     
     .reportdiv > form > .textareaform {
@@ -124,7 +119,7 @@
         display: none;
     }
     
-    .button {
+    button {
         position: absolute;
         left: 0;
         right: 0;
@@ -138,10 +133,6 @@
         font-family: 'Lemon', serif;
     }
     
-    #apakahandayakin:disabled {
-        background-color: #fff;
-        color: #000;
-    }
     </style>
     
     
@@ -168,10 +159,7 @@
             <input class="isiform" id="form_pengirim" class="isiform" type="text" name="form_pengirim" placeholder="Masukkan Apa Jabatan Anda?...">
             <input class="isiform" id="form_nomor_pemilik" class="isiform" type="number" name="form_nomor_pemilik" placeholder="Masukkan Nomor Pemilik...">
             <textarea id="tujuan_kerja_sama" class="textareaform" name="textareaform" placeholder="Jelaskan mengapa anda ingin bekerja sama dengan G90NF..."></textarea>
-            <div class="g-recaptcha" data-sitekey="6LdvypEpAAAAAB_utCH37aAi0ecBBcfSU9sbDf48" data-callback="enableButton" data-size="normal"></div>
-            <br>
-            <p style="font-size: 10px; color: #fff; font-family: 'Nunito', sans-serif;">Verifikasi Terlebih Dahulu Sebelum Bekerja Sama atau Aliansi!</p>
-            <input style="background-color: #aaa; transition: 1s;" id="apakahandayakin" class="submitform" type="submit" onclick="submitForm()" disabled value="Ayo Kerja Sama">
+            <input class="submitform" type="submit" value="Mari Kerja Sama">
         </form>
     </div>
     
@@ -184,65 +172,57 @@
     <script>
     
     window.onload = function() {
-    var lastSubmission = getCookie('lastSubmission');
-    if (lastSubmission) {
-        lastSubmission = new Date(lastSubmission);
-        var now = new Date();
-        var diff = now - lastSubmission;
-        var threeDaysInMs = 1 * 24 * 60 * 60 * 1000;
-
-        if (diff < threeDaysInMs) {
-            // Jika pengguna telah mengirim form dalam 3 hari terakhir, sembunyikan form dan tampilkan div
-            document.getElementById('formContainer').style.display = 'none';
-            document.getElementById('tampilanSetelahKirim').style.display = 'block';
-        }
+  var lastSubmission = getCookie('lastSubmission');
+  if (lastSubmission) {
+    lastSubmission = new Date(lastSubmission);
+    var now = new Date();
+    var diff = now - lastSubmission;
+    var threeDaysInMs = 1 * 24 * 60 * 60 * 1000;
+    
+    if (diff < threeDaysInMs) {
+      // Jika pengguna telah mengirim form dalam 3 hari terakhir, sembunyikan form dan tampilkan div
+      document.getElementById('formContainer').style.display = 'none';
+      document.getElementById('tampilanSetelahKirim').style.display = 'block';
     }
+  }
 };
 
 function submitForm() {
-    var lastSubmission = getCookie('lastSubmission');
-
-    if (lastSubmission) {
-        var lastSubmissionDate = new Date(lastSubmission);
-        var now = new Date();
-        var diff = now - lastSubmissionDate;
-        var threeDaysInMs = 1 * 24 * 60 * 60 * 1000;
-
-        if (diff < threeDaysInMs) {
-            alert('Maaf, Anda hanya dapat mengirim form sekali dalam 3 hari.');
-            return;
-        }
-    }
-
-    // Simpan informasi pengiriman terakhir di cookie
+  var lastSubmission = getCookie('lastSubmission');
+  
+  if (lastSubmission) {
+    var lastSubmissionDate = new Date(lastSubmission);
     var now = new Date();
-    document.cookie = "lastSubmission=" + now + "; max-age=" + (1 * 24 * 60 * 60);
-
-    // Sembunyikan form dan tampilkan div setelah pengiriman form
-    document.getElementById('formContainer').style.display = 'none';
-    document.getElementById('tampilanSetelahKirim').style.display = 'block';
+    var diff = now - lastSubmissionDate;
+    var threeDaysInMs = 1 * 24 * 60 * 60 * 1000;
+    
+    if (diff < threeDaysInMs) {
+      alert('Maaf, Anda hanya dapat mengirim form sekali dalam 3 hari.');
+      return;
+    }
+  }
+  
+  // Simpan informasi pengiriman terakhir di cookie
+  var now = new Date();
+  document.cookie = "lastSubmission=" + now + "; max-age=" + (1 * 24 * 60 * 60);
+  
+  // Sembunyikan form dan tampilkan div setelah pengiriman form
+  document.getElementById('formContainer').style.display = 'none';
+  document.getElementById('tampilanSetelahKirim').style.display = 'block';
 }
 
 function getCookie(name) {
-    var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i].trim();
-        if (cookie.indexOf(name) === 0) {
-            return cookie.substring(name.length + 1);
-        }
+  var cookies = document.cookie.split(';');
+  for (var i = 0; i < cookies.length; i++) {
+    var cookie = cookies[i].trim();
+    if (cookie.indexOf(name) === 0) {
+      return cookie.substring(name.length + 1);
     }
-    return null;
+  }
+  return null;
 }
 
 
-
-function enableButton() {
-  document.getElementById("apakahandayakin").disabled = false;
-}
-
-document.getElementById("apakahandayakin").addEventListener("click", function() {
-  document.getElementById("apakahandayakin").style.backgroundColor = "#fff";
-});
 
 
 
@@ -251,4 +231,4 @@ document.getElementById("apakahandayakin").addEventListener("click", function() 
     </script>
 
 </body>
-</html>
+                                                 </html>
