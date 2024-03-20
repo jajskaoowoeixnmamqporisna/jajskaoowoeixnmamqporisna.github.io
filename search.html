@@ -11,11 +11,10 @@
     <link rel="shortcut icon" href="https://i.imgur.com/ggIjVZ6.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/55100b01de.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>    
+    <script src="script.js"></script>
     <title>Search</title>
 </head>
-<body>
-    
+<body>    
     <header>
         <div class="headermenu">
             <a class="barsbut" id="opennavigasi"><i id="buttonsidebari" class="fa fa-bars"></i></a>
@@ -51,29 +50,11 @@
     
     <h1 class="g90search">G90-Search</h1>
     
-    <div id="tombolcarimembuka" class="tombolcarimembuka">
-        <i style="float: right;" class="fa fa-search"></i>
-    </div>
-    
-    <div id="lagihotpencarian" class="lagihotpencarian">
-        <h1>Sedang HOT! <i class="fa fa-fire"></i></h1>
-        <img id="lagihotimg" src="" alt="Hot!">
-        <p id="lagihottext"></p>
-        <button id="lagihotbutton">Pergi</button>
-    </div>
-    
     <section class="halamancari" id="halamanCari">
-        <button id="tombolTutup" onclick="tutupHalamanCari()"><i class="fa fa-times"></i></button>
         <div class="halamancari2">
             <input class="inputsearch" type="search" id="myInput" oninput="filterList()" placeholder="Search...">
-            <button onclick="searchAndRedirect()"><i class="fa fa-search"></i></button>
-            <button onclick="toggleSpeechRecognition()"><i class="fa fa-microphone"></i></button>
-            <hr>
-            <div id="recordingPopup">
-            <div id="popupText">Sedang merekam...</div>
-            <div id="translationText"></div>
-            <div id="cancelButton" onclick="cancelRecognition()">Batal</div>
-    </div>
+            <button onclick="searchAndRedirect()"><i class="fa fa-search"></i></button>            
+        </div>
         <ul id="myList">
             <!-- Item Pencarian -->
         </ul>
@@ -107,72 +88,15 @@ Organisasi ini di buat pada tanggal 17 Juni 2022</p>
         <p>©G90NegaraFiksi</p>
     </section>
     
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pocketsphinx.js/0.1.0/pocketsphinx.js"></script>
     <script>
-        var tombolCari = document.getElementById("tombolcarimembuka");
-        var halamanCari = document.getElementById("halamanCari");
-
-        tombolCari.addEventListener("click", function() {
-            halamanCari.style.opacity = "1";
-            halamanCari.style.top = "0";
-        });
-
-        function tutupHalamanCari() {
-            halamanCari.style.opacity = "0";
-            halamanCari.style.top = "250px";
-        }
-    
-    
-    
-    
+        
     
     
     
     
         
         
-            const csvHotUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSpp4qZ05lFoTXdzCzEL05oQ1Gnlgw_Yv8JBNLHqC03ZNK-t1QAA2LVQOTlYZpoHnzLs_IWY06Ti2ID/pub?output=csv';
-
-        // Mendapatkan data dari CSV untuk Hot Items
-        fetch(csvHotUrl)
-            .then(response => response.text())
-            .then(data => {
-                const rows = data.split('\n').map(row => row.split(','));
-
-                const imghotlist = document.getElementById('lagihotimg');
-                const photlist = document.getElementById('lagihottext');
-                const buttonhotlist = document.getElementById('lagihotbutton');
-
-                for (let i = 0; i < rows.length; i++) {
-                    const colAhot = rows[i][0] ? rows[i][0].trim() : ''; 
-                    const colBhot = rows[i][1] ? rows[i][1].trim() : '';
-                    const colChot = rows[i][2] ? rows[i][2].trim() : '';
-                    
-                    if (colAhot || colBhot) {
-                        imghotlist.src = colAhot;
-                        photlist.textContent = colBhot;
-
-                        const navigateToUrl = function() {
-                            window.location.href = colChot;
-                        };
-
-                        buttonhotlist.addEventListener('click', navigateToUrl);
-                    }
-                }
-            });
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            
         
         const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQv3x1LzPFAjp4EHoAUTC4r55-Z0AVCnxCpkWcEad3aV6GSg57l6FPN0Ju3Uucc93a5ZZaJTR5bR5sh/pub?output=csv';
 
@@ -294,60 +218,12 @@ function searchAndRedirect() {
     
         
         
-        const searchInput = document.getElementById('myInput');
-        const recordingPopup = document.getElementById('recordingPopup');
-        const popupText = document.getElementById('popupText');
-        const translationText = document.getElementById('translationText');
-        const cancelButton = document.getElementById('cancelButton');
-
-        let recognizer;
-        let isRecording = false;
-
-        function toggleSpeechRecognition() {
-            if (isRecording) {
-                stopRecognition();
-            } else {
-                startRecognition();
-            }
-        }
-
-        function startRecognition() {
-            recordingPopup.style.display = 'block';
-            popupText.textContent = 'Sedang merekam...';
-            isRecording = true;
-
-            recognizer = new Pocketsphinx.Recognizer();
-
-            recognizer.on('data', (data) => {
-                const speechToText = data.hypotheses[0].transcript;
-                searchInput.value = speechToText;
-
-                // Menampilkan terjemahan sebelum dimasukkan ke dalam input
-                translationText.textContent = 'Terjemahan: ' + speechToText;
-            });
-
-            recognizer.start();
-
-            setTimeout(() => {
-                stopRecognition();
-            }, 5000); // Otomatis berhenti setelah 5 detik
-        }
-
-        function stopRecognition() {
-            hideRecordingPopup();
-            isRecording = false;
-
-            recognizer.stop();
-        }
-
-        function hideRecordingPopup() {
-            recordingPopup.style.display = 'none';
-            translationText.textContent = ''; // Mengosongkan teks terjemahan setelah popup ditutup
-        }
-
-        function cancelRecognition() {
-            stopRecognition();
-        }
+        
+        
+        
+        
+        
+        
     </script>
 </body>
 </html>
