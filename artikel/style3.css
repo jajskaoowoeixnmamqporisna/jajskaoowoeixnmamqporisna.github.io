@@ -258,9 +258,30 @@ body {
         display: block;
     }
     
+    .previewcontent {
+        text-align: left;
+        color: #000;
+        font-family: Arial, sans-serif;
+    }
     
+    .previewcontent > img {
+        width: 100%;
+        height: auto;
+    }
     
+    .previewcontent > h1 {
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+    }
     
+    .previewcontent > p {
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+    }
+    
+    #content {
+        margin: 10px;
+    }
     
     
     
@@ -459,10 +480,34 @@ body {
         display: block;
     }
     
+    .previewcontent {
+        text-align: left;
+        color: #000;
+        font-family: Arial, sans-serif;
+    }
+    
+    .previewcontent > img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .previewcontent > h1 {
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+    }
+    
+    .previewcontent > p {
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+    }
+    
+    #content {
+        margin: 10px;
+    }
     
     
     
     
     
-    
-}
+      }
+        
