@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Russo+One&family=Special+Elite&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    transition: background-color 1s ease;
+}
+
+[kezttransition1] {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    position: relative;
+    z-index: -1;
+}
+
+  [kezttransition2] {
+    opacity: 0;
+    transform: translateX(10%);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    z-index: -1;
+}
+
+  [kezttransition3] {
+    opacity: 0;
+    transform: translateX(-10%);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    z-index: -1;
+}
+
+  [kezttransition4] {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    position: relative;
+    z-index: -1;
+}
+
+
+@media (max-width: 808px) {
+    header {
+        position: fixed;
+        background: #fff;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        width: 100%;
+        height: 20px;
+        box-shadow: 0px 0px 10px #000;
+    }
+    
+    header > .barsdesktop {
+        display: none;
+    }
+    
+    header > .headermenu {
+        
+    }
+    
+    header > .headermenu > .barsbut {
+        float: left;
+        font-size: 20px;
+        color: #000;
+        
+    }
+    
+    header > .headermenu > img {
+        position: relative;
+        width: 160px;
+        top: -12px;
+    }
+    
+    header > .headermenu > .whatsappbut {
+        float: right;
+        margin-right: 25px;
+        font-size: 20px;
+        color: #000;
+        cursor: none;
+        transition: 1s;
+    }
+    
+    header > .headermenu > .whatsappbut:hover {
+        transform: scale(0.9);
+    }
+    
+    header > .sidebarnav {
+        position: fixed;
+        background: #9abccd;
+        top: 0;
+        left: 0;
+        float: left;
+        width: 0px;
+        height: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        opacity: 1;
+        transition: 1s;
+        align-items: left;
+        text-align: left;
+    }
+    
+    header > .sidebarnav > p {
+        color: #fff;
+        font-size: 30px;
+        font-family: "Russo One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        margin: 10px;
+    }
+    
+    header > .sidebarnav > a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        font-family: "Nunito", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        margin: 10px;
+        cursor: none;
+        padding: 7px 5px;
+        margin-top: 10px;
+        transition: 1s;
+    }
+    
+    header > .sidebarnav > a:hover {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        font-family: "Nunito", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        margin: 10px;
+        cursor: none;
+        background: #ffffff7d;
+        padding: 7px 30px;
+        border-radius: 5px;
+        margin-top: 10px;
+        transition: 1s;
+    }
+    
+    header > .sidebarnav > .menuheader {
+        dislay: block;
+        margin-bottom: 50px;
+        padding: 10px;
+        width: 90%;
+    }
+    
+    header > .sidebarnav > .menuheader > a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        cursor: none;
+        padding: 7px 5px;
+        margin-top: 10px;
+        transition: 1s;
+    }
+    
+    .akhiran {
+        background: #1b1b1b;
+        color: #fff;
+        text-align: left;
+    }
+    
+    .akhiran::after {
+       content: "";
+       display: table;
+       clear: both;
+    }
+    
+    .akhiran > h1 {
+        color: #fff;
+        font-size: 30px;
+        font-family: "Russo One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-align: left;
+        margin: 15px;
+    }
+    
+    .akhiran > p {
+        background: #1b1b1b;
+        font-family: "Nunito", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        color: #fff;
+        text-align: left;
+        margin-left: 15px;
+    }
+    
+    .akhiran > .sosialmedia {
+        background: #101010;
+        padding: 20px;
+    }
+    
+    .akhiran > .sosialmedia > a {
+        text-decoration: none;
+        cursor: none;
+        color: #999;
+        font-size: 20px;
+        margin: 0 15px 0 15px;
+        transition: 1s;
+    }
+    
+    .akhiran > .sosialmedia > a:hover {
+        color: #fff;
+        transform: scale(0.8);
+        transition: 1s;
+    }
+    
+    .akhiran > p {
+        font-family: "Nunito", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 10px;
+        color: #fff;
+    }
+    
+    .akhiran > .contentakhiran {
+        width: 35%;
+        margin: 15px;
+        display: inline-block;
+    }
+    
+    .akhiran > .contentakhiran > p {
+        font-family: "Nunito", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        color: #fff;
+    }
+    
+    .akhiran > .contentakhiran > a {
+        text-decoration: none;
+        cursor: none;
+        color: #999;
+        font-family: "Nunito", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        display: block;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+@media (min-width: 808px) {
+    
+    header {
+        position: fixed;        
+        background: #fff;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        width: 100%;
+        height: 20px;
+        filter: drop-shadow(0px 0px 5px #000);
+        z-index: 1000;
+    }
+    
+    header > .headermenu,
+    header > .sidebarnav {
+        display: none;
+    }
+    
+    header > .barsdesktop {
+        user-select: none;
+    }
+    
+    .barsdesktop > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .barsdesktop > ul > li {
+        display: inline;
+    }
+    
+    .barsdesktop > ul > img {
+        display: inline;
+        position: relative;
+        float: left;
+        top: -10px;
+        margin-left: 10px;
+        width: 150px;
+        transition: 1s;
+    }
+    
+    .barsdesktop > ul > h1:hover {
+        display: inline;
+        position: relative;
+        float: left;
+        font-size: 20px;
+        top: -15px;
+        margin-left: 10px;
+        transform: scale(0.9);
+        transition: 1s;
+     }
+     
+    .barsdesktop > ul > li > .menuhalaman {
+        color: #000;
+        text-decoration: none;
+        cursor: none;
+        justify-content: space-between;
+        position: relative;
+        font-family: 'Nunito', sans-serif;
+        margin: 0 3% 0 3%;
+    }
+    
+    .barsdesktop > ul > li > .submenu {
+        color: #000;
+        text-decoration: none;
+        cursor: none;
+        justify-content: space-between;
+        position: relative;
+        font-family: 'Nunito', sans-serif;
+        margin: 0 5px 0 5px;
+    }
+
+    .barsdesktop > ul > li > a::before,
+    .barsdesktop > ul > li > a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #000000;
+        transition: width 1s ease;
+    }
+     
+    .barsdesktop > ul > li > a::before {
+        left: 50%;
+        transform-origin: left;
+    }
+    
+    .barsdesktop > ul > li > a::after {
+        right: 50%;
+        transform-origin: right;
+    }
+    
+    .barsdesktop > ul > li > a:hover::before,
+    .barsdesktop > ul > li > a:hover::after {
+        width: 50%;
+    }
+    
+    .akhiran {
+        background: #1b1b1b;
+        color: #fff;
+        text-align: left;
+        margin-top: 20%;
+    }
+    
+    .akhiran::after {
+       content: "";
+       display: table;
+       clear: both;
+    }
+    
+    .akhiran > h1 {
+        color: #fff;
+        font-size: 30px;
+        font-family: "Russo One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-align: left;
+        margin: 15px;
+    }
+    
+    .akhiran > p {
+        background: #1b1b1b;
+        font-family: "Nunito", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        color: #fff;
+        text-align: left;
+        margin-left: 15px;
+    }
+    
+    .akhiran > .sosialmedia {
+        background: #101010;
+        padding: 20px;
+    }
+    
+    .akhiran > .sosialmedia > a {
+        text-decoration: none;
+        cursor: none;
+        color: #999;
+        font-size: 20px;
+        margin: 0 15px 0 15px;
+        transition: 1s;
+    }
+    
+    .akhiran > .sosialmedia > a:hover {
+        color: #fff;
+        transform: scale(0.8);
+        transition: 1s;
+    }
+    
+    .akhiran > p {
+        font-family: "Nunito", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 10px;
+        color: #fff;
+    }
+    
+    .akhiran > .contentakhiran {
+        width: 35%;
+        margin: 15px;
+        display: inline-block;
+    }
+    
+    .akhiran > .contentakhiran > p {
+        font-family: "Nunito", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        color: #fff;
+    }
+    
+    .akhiran > .contentakhiran > a {
+        text-decoration: none;
+        cursor: none;
+        color: #999;
+        font-family: "Nunito", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        display: block;
+    }
+    
+    
+    
+    
+    
+    
+    
+}
