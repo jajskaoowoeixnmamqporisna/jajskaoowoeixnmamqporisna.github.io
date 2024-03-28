@@ -848,7 +848,7 @@ body {
         height: auto;
         margin-right: 15px;
         border-radius: 31% 69% 62% 38% / 37% 30% 70% 63% ;
-        filter: drop-shadow(0 0 10px #000);
+        box-shadow: 0 0 10px #221;
         margin: 8px;
     }
     
@@ -1664,7 +1664,7 @@ body {
         height: auto;
         margin-right: 15px;
         border-radius: 31% 69% 62% 38% / 37% 30% 70% 63% ;
-        filter: drop-shadow(0 0 10px #000);
+        box-shadow: 0 0 10px #221;
         margin: 10px;
     }
     
