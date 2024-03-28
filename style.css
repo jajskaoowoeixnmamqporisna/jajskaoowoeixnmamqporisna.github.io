@@ -847,7 +847,8 @@ body {
         width: 40%;
         height: auto;
         margin-right: 15px;
-        border-radius: 5px;
+        border-radius: 31% 69% 62% 38% / 37% 30% 70% 63% ;
+        filter: drop-shadow(0 0 10px #000);
         margin: 8px;
     }
     
@@ -1662,7 +1663,8 @@ body {
         width: 40%;
         height: auto;
         margin-right: 15px;
-        border-radius: 5px;
+        border-radius: 31% 69% 62% 38% / 37% 30% 70% 63% ;
+        filter: drop-shadow(0 0 10px #000);
         margin: 10px;
     }
     
