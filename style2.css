@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Russo+One&family=Special+Elite&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    transition: background-color 1s ease;
+}
+
+
+
+
+
+
+@media (max-width: 808px) {
+    
+    .galery-container {
+        width: 100%;
+        margin-top: 15%;
+    }
+    
+    .galery-content {
+        max-width: 600px;
+        margin: 20px auto;
+        box-shadow: 0 0 7px #000;
+        width: 90%;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+    
+    .galery-content > img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    .galery-content > h1 {
+        font-family: "Nunito", sans-serif;
+        font-size: 17px;
+        color: #000;
+        text-align: left;
+        margin: 10px;
+    }
+    
+    .galery-content > .text-content {
+        max-height: 0;
+        overflow: hidden;
+        font-family: "Nunito", sans-serif;
+        font-size: 15px;
+        color: #000;
+        margin: 10px;
+        text-align: left;
+        transition: max-height 1s ease;
+    }
+    
+    .galery-content > .text-content > p {
+        font-family: "Nunito", sans-serif;
+        font-size: 13px;
+        color: #000;
+        text-align: left;        
+    }
+    
+    .galery-content > button {
+        border-radius: 99999999px;
+        background: #2257cb;
+        color: #fff;
+        padding: 8px 25px;
+        font-size: 15px;
+        font-weight: bold;
+        border: none;
+        margin-bottom: 10px;
+        user-select: none;
+        transition: 1s;
+    }
+    
+    .galery-content > button:active {
+        transform: scale(0.9);
+        transition: 0.5s;
+    }
+    
+    
+}
+
+
+@media (min-width: 808px) {
+    
+    .galery-container {
+        width: 100%;
+        margin-top: 5%;
+    }
+    
+    .galery-content {
+        max-width: 900px;
+        margin: 20px auto;
+        box-shadow: 0 0 7px #000;
+        width: 100%;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+    
+    .galery-content > img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    .galery-content > h1 {
+        font-family: "Nunito", sans-serif;
+        font-size: 17px;
+        color: #000;
+        text-align: left;
+        margin: 10px;
+    }
+    
+    .galery-content > .text-content {
+        max-height: 0;
+        overflow: hidden;
+        font-family: "Nunito", sans-serif;
+        font-size: 15px;
+        color: #000;
+        margin: 10px;
+        text-align: left;
+        transition: max-height 1s ease;
+    }
+    
+    .galery-content > .text-content > p {
+        font-family: "Nunito", sans-serif;
+        font-size: 13px;
+        color: #000;
+        text-align: left;        
+    }
+    
+    .galery-content > button {
+        border-radius: 99999999px;
+        background: #2257cb;
+        color: #fff;
+        padding: 8px 25px;
+        font-size: 15px;
+        font-weight: bold;
+        border: none;
+        margin-bottom: 10px;
+        user-select: none;
+        transition: 1s;
+    }
+    
+    .galery-content > button:hover {
+        transform: scale(0.9);
+        transition: 1s;
+    }
+    
+    
+    
+    
+    
+}
