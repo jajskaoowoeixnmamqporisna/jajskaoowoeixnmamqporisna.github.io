@@ -52,7 +52,7 @@ body {
 @media (max-width: 808px) {
     header {
         position: fixed;
-        background: #fff;
+        background: #A7D398;
         top: 0;
         left: 0;
         padding: 10px;
@@ -78,7 +78,7 @@ body {
     
     header > .headermenu > img {
         position: relative;
-        width: 80px;
+        width: 200px;
         top: -12px;
     }
     
@@ -876,7 +876,7 @@ body {
     
     header {
         position: fixed;        
-        background: #fff;
+        background: #A7D398;
         top: 0;
         left: 0;
         padding: 10px;
@@ -911,7 +911,7 @@ body {
         float: left;
         top: -13px;
         margin-left: 10px;
-        width: 80px;
+        width: 200px;
         transition: 1s;
     }
     
