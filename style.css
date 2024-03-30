@@ -78,7 +78,7 @@ body {
     
     header > .headermenu > img {
         position: relative;
-        width: 200px;
+        width: 190px;
         top: -12px;
     }
     
@@ -911,7 +911,7 @@ body {
         float: left;
         top: -13px;
         margin-left: 10px;
-        width: 200px;
+        width: 190px;
         transition: 1s;
     }
     
