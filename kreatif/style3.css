@@ -24,35 +24,7 @@ body {
     transition: background-color 1s ease;
 }
 
-[kezttransition1] {
-    opacity: 0;
-    transform: translateY(100%);
-    transition: opacity 1.5s ease, transform 1.5s ease;
-    position: relative;
-    z-index: -1;
-}
 
-  [kezttransition2] {
-    opacity: 0;
-    transform: translateX(10%);
-    transition: opacity 1.5s ease, transform 1.5s ease;
-    z-index: -1;
-}
-
-  [kezttransition3] {
-    opacity: 0;
-    transform: translateX(-10%);
-    transition: opacity 1.5s ease, transform 1.5s ease;
-    z-index: -1;
-}
-
-  [kezttransition4] {
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: opacity 1.5s ease, transform 1.5s ease;
-    position: relative;
-    z-index: -1;
-}
 
 
 @media (max-width: 808px) {
@@ -174,7 +146,7 @@ body {
     
     .sectioncontainerkreatif > .kreatif-bagian-a > .item-container-rekomendasi > img {
         width: 100%;
-        height: 90%;
+        height: 70%;
         border-radius: 5px;
     }
     
@@ -566,7 +538,7 @@ body {
     
     .sectioncontainerkreatif > .kreatif-bagian-a > .item-container-rekomendasi > img {
         width: 100%;
-        height: 90%;
+        height: 70%;
         border-radius: 5px;
     }
     
