@@ -1,51 +1,43 @@
-function showOnScroll() {
-    const kezttransition1 = document.querySelectorAll('[kezttransition1]');
-    kezttransition1.forEach(function(element) {
-      const rect = element.getBoundingClientRect();
-      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+//Transisi Awal View
 
-      if (rect.top >= 0 && rect.bottom <= windowHeight) {
-        element.style.opacity = 1;
-        element.style.transform = 'translateY(0)';
-      }
-    });
-
-    const kezttransition2 = document.querySelectorAll('[kezttransition2]');
-    kezttransition2.forEach(function(element) {
-      const rect = element.getBoundingClientRect();
-      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-      if (rect.top >= 0 && rect.bottom <= windowHeight) {
-        element.style.opacity = 1;
-        element.style.transform = 'translateX(0)';
-      }
-    });
+function fadeInElements() {
+  var fadeUpElements = document.querySelectorAll('[kezt-transition1], [kezt-transition2], [kezt-transition3], [kezt-transition4], [kezt-transition5]');
+  fadeUpElements.forEach(function(element) {
+    var rect = element.getBoundingClientRect();
+    var elementTop = rect.top + window.pageYOffset;
+    var windowHeight = window.innerHeight;
+    var scrollPosition = window.scrollY;
     
-    const kezttransition3 = document.querySelectorAll('[kezttransition3]');
-    kezttransition3.forEach(function(element) {
-      const rect = element.getBoundingClientRect();
-      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-      if (rect.top >= 0 && rect.bottom <= windowHeight) {
-        element.style.opacity = 1;
-        element.style.transform = 'translateX(0)';
+    if (elementTop < windowHeight + scrollPosition) {
+      if (!element.hasAttribute('kezt-transitioned')) {
+        if (element.hasAttribute('kezt-transition1')) {
+          element.style.opacity = 1;
+          element.style.top = 0;
+        } else if (element.hasAttribute('kezt-transition2')) {
+          element.style.opacity = 1;
+          element.style.left = 0;
+        } else if (element.hasAttribute('kezt-transition3')) {
+          element.style.opacity = 1;
+          element.style.right = 0;
+        } else if (element.hasAttribute('kezt-transition4')) {
+          element.style.opacity = 1;
+          element.style.bottom = 0;
+        } else if (element.hasAttribute('kezt-transition5')) {
+          element.style.opacity = 1;
+        }
+        element.setAttribute('kezt-transitioned', 'true');
       }
-    });
-    
-    const kezttransition4 = document.querySelectorAll('[kezttransition4]');
-    kezttransition4.forEach(function(element) {
-      const rect = element.getBoundingClientRect();
-      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    }
+  });
+}
 
-      if (rect.top >= 0 && rect.bottom <= windowHeight) {
-        element.style.opacity = 1;
-        element.style.transform = 'translateY(0)';
-      }
-    });
-  }
+window.addEventListener('scroll', function() {
+  fadeInElements();
+});
 
-  window.addEventListener('scroll', showOnScroll);
-  window.addEventListener('DOMContentLoaded', showOnScroll);
+window.onload = function() {
+  fadeInElements();
+};
 
 
 
