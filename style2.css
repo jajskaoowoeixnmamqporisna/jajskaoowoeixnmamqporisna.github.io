@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Russo+One&family=Special+Elite&display=swap');
 
-* {
-    clear: both;
-}
-
 html {
     scroll-behavior: smooth;
 }
