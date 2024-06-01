@@ -1,0 +1,800 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Russo+One&family=Special+Elite&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    overflow: auto;
+    transition: background-color 1s ease;
+}
+
+@font-face  {
+    font-family: "fsProMedium";
+    src: url("https://g90nf.kezt.my.id/upload/file/sfpro-display-medium.otf");
+    font-weight: normal;
+}
+
+
+
+
+
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(500px);
+    }
+    100% {
+        transform: translateX(-2500px);
+    }
+}
+
+@keyframes jedagjedug {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@media (max-width: 808px) {
+    
+    .galery-container {
+        width: 100%;
+        margin-top: 15%;
+    }
+    
+    .galery-content {
+        max-width: 600px;
+        margin: 20px auto;
+        box-shadow: 0 0 7px #000;
+        width: 90%;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+    
+    .galery-content > img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    .galery-content > h1 {
+        font-family: "Nunito", sans-serif;
+        font-size: 17px;
+        color: #000;
+        text-align: left;
+        margin: 10px;
+    }
+    
+    .galery-content > .text-content {
+        max-height: 0;
+        overflow: hidden;
+        font-family: "Nunito", sans-serif;
+        font-size: 15px;
+        color: #000;
+        margin: 10px;
+        text-align: left;
+        transition: max-height 1s ease;
+    }
+    
+    .galery-content > .text-content > p {
+        font-family: "Nunito", sans-serif;
+        font-size: 13px;
+        color: #000;
+        text-align: left;        
+    }
+    
+    .galery-content > button {
+        border-radius: 99999999px;
+        background: #2257cb;
+        color: #fff;
+        padding: 8px 25px;
+        font-size: 15px;
+        font-weight: bold;
+        border: none;
+        margin-bottom: 10px;
+        user-select: none;
+        transition: 1s;
+    }
+    
+    .galery-content > button:active {
+        transform: scale(0.9);
+        transition: 0.5s;
+    }
+    
+    .sambutan-section-1 {
+        background-color: #F5F5F7;
+        margin-top: 50px;
+        width: 100%;
+        padding-top: 70px;
+        padding-bottom: 90px;
+        margin-bottom: 10px;
+    }
+    
+    .sambutan-section-1 > .welcome-object-sabutan {
+        width: 90%;
+        margin: auto;
+    }
+    
+    .sambutan-section-1 > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 35px;
+        margin-bottom: 100px;
+        margin-top: 0;
+    }
+    
+    .sambutan-section-1 > h2 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 10px;
+        margin: 15px 10%;
+        font-weight: bolder;
+        padding: 5px;
+        letter-spacing: 0.5px;
+    }
+    
+    .sambutan-section-1 > a {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 15px;
+        margin: 15px 10%;
+        font-weight: bolder;
+        text-decoration: none;
+        cursor: none;
+        color: #0071E3;
+    }
+    
+    .sambutan-section-2 {
+        background-color: #F5F5F7;
+        margin-bottom: 10px;
+        padding: 10px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .sambutan-section-2 > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 40px;
+        margin-left: 5px;
+        text-align: left;
+    }
+    
+    .sambutan-section-2 > p {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 13px;
+        width: 80%;
+        margin-left: 5px;
+        text-align: left;
+    }
+    
+    .sambutan-section-2 > .sambutan-ini-untuk-image-adada {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .sambutan-section-2 > .sambutan-ini-untuk-image-adada > img {
+        width: 100%;
+        border-radius: 20px;
+    }
+    
+    .sambutan-section-2 > .sambutan-ini-untuk-image-adada > p {
+        display: none;
+    }
+    
+    .sambutan-section-2 > .sambutan-ini-untuk-image-adada > .overlay {
+        position: absolute;
+        top: -15px;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #F5F5F7 50%, #F5F5F7 100%);
+    }
+    
+    .sambutan-section-3 {
+        background-color: #F5F5F7;
+        margin-bottom: 10px;
+        padding: 6px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .sambutan-section-3 > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 40px;
+        margin-left: 5px;
+        text-align: left;
+    }
+    
+    .sambutan-section-3 > .nunggucoundown > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 25px;
+        font-weight: bolder;
+        text-decoration: none;
+        cursor: none;
+        color: #0071E3;
+    }
+    
+    .sambutan-section-3 > .nunggucoundown > h2 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 10px;
+        margin: 15px 10%;        
+        font-weight: bolder;
+        padding: 5px;
+        letter-spacing: 0.5px;
+    }
+    
+    .sambutan-section-3 > p {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 13px;
+        width: 80%;
+        margin-left: 5px;
+        text-align: left;
+    }
+    
+    .sambutan-section-3 > .countdown {
+        display: flex;
+        align-content: space-around;
+        margin: 0 15px;
+    }
+    
+    .sambutan-section-3 > .countdown > div {
+        align-items: center;
+        background: #2a2a2a;
+        border-radius: 10px;
+        font-family: "fsProMedium", sans-serif;
+        font-size: 15px;
+        color: #fff;
+        flex: 1;
+        padding: 5%;
+        box-sizing: border-box;
+        margin: 10px;
+    }
+    
+    .sambutan-section-3 > .passelesaicoundown > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 25px;
+        font-weight: bolder;
+        text-decoration: none;
+        cursor: none;
+        color: #0071E3;
+    }
+    
+    .sambutan-section-3 > .passelesaicoundown > h2 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 10px;
+        margin: 15px 10%;        
+        font-weight: bolder;
+        padding: 5px;
+        letter-spacing: 0.5px;
+    }
+    
+    .sambutan-section-3 > .passelesaicoundown > .passelesaicoundowndiv {
+        display: flex;
+        align-content: space-around;
+        margin: 0 15px;
+    }
+    
+    .sambutan-section-3 > .passelesaicoundown > .passelesaicoundowndiv > div {
+        align-items: center;
+        background: #2a2a2a;
+        border-radius: 10px;
+        font-family: "fsProMedium", sans-serif;
+        font-size: 15px;
+        color: #fff;
+        flex: 1;
+        padding: 5%;
+        box-sizing: border-box;
+        margin: 10px;
+    }
+    
+    .sambutan-section-4 {
+        background-color: #F5F5F7;
+        margin-bottom: 10px;
+        padding: 10px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .sambutan-section-4 > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 25px;
+        font-weight: bolder;
+        text-decoration: none;
+        cursor: none;
+        color: #0071E3;
+    }
+    
+    .sambutan-section-4 > p {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 13px;
+        margin: 0 15%;
+    }
+    
+    .sambutan-section-4 > .container-project {
+        margin: 0;
+        width: 100%;
+        overflow-x: hidden;
+        white-space: nowrap;
+        margin-bottom: 50px;
+    }
+    
+    .sambutan-section-4 > .container-project > .item-project {
+        display: inline-block;
+        margin: 10px;
+        border-radius: 10px;
+        width: 200px;
+        background: #f4f4f4;
+        padding-bottom: 5px;
+        box-shadow: 0 0 7px #000;
+        animation: scrollLeft 30s linear infinite;
+    }
+    
+    .sambutan-section-4  > .container-project > .item-project > img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    .sambutan-section-4 > .container-project > .item-project > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 10%;
+        color: #000;
+    }
+    
+    .sambutan-section-5 {
+        background-color: #F5F5F7;
+        max-width: 100%;
+        padding: 40px ;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    
+    .sambutan-section-5 > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 25px 15px;
+        font-weight: bolder;
+        text-decoration: none;
+        cursor: none;
+        color: #0071E3;
+    }
+    
+    .sambutan-section-5 > p {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 13px;
+        margin: 0 2%;
+    }
+    
+    .sambutan-section-5 > .suport-container {
+        display: flex;
+    }
+    
+    .sambutan-section-5 > .suport-container > .suport-item {
+        flex: 1;
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 7px #000;
+    }
+    
+    .sambutan-section-5 > .suport-container > .suport-item > img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    .sambutan-section-5 > .suport-container > .suport-item > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 14px;
+        margin: 5px;
+    }
+    
+    .passelesaicoundown2 {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #ffffff6f;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .passelesaicoundown2 > img {
+        margin: 50% auto;    
+        width: 100%;
+        filter: drop-shadow(0 0 10px #000);
+        animation: jedagjedug 5s linear infinite;
+    }
+    
+    
+    
+    
+}
+
+
+@media (min-width: 808px) {
+    
+    .galery-container {
+        width: 100%;
+        margin-top: 5%;
+    }
+    
+    .galery-content {
+        max-width: 900px;
+        margin: 20px auto;
+        box-shadow: 0 0 7px #000;
+        width: 100%;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+    
+    .galery-content > img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    .galery-content > h1 {
+        font-family: "Nunito", sans-serif;
+        font-size: 17px;
+        color: #000;
+        text-align: left;
+        margin: 10px;
+    }
+    
+    .galery-content > .text-content {
+        max-height: 0;
+        overflow: hidden;
+        font-family: "Nunito", sans-serif;
+        font-size: 15px;
+        color: #000;
+        margin: 10px;
+        text-align: left;
+        transition: max-height 1s ease;
+    }
+    
+    .galery-content > .text-content > p {
+        font-family: "Nunito", sans-serif;
+        font-size: 13px;
+        color: #000;
+        text-align: left;        
+    }
+    
+    .galery-content > button {
+        border-radius: 99999999px;
+        background: #2257cb;
+        color: #fff;
+        padding: 8px 25px;
+        font-size: 15px;
+        font-weight: bold;
+        border: none;
+        margin-bottom: 10px;
+        user-select: none;
+        transition: 1s;
+    }
+    
+    .galery-content > button:hover {
+        transform: scale(0.9);
+        transition: 1s;
+    }
+    
+    .sambutan-section-1 {
+        background-color: #F5F5F7;
+        margin-top: 50px;
+        width: 100%;
+        height: 100%;
+        padding-top: 70px;
+        padding-bottom: 90px;
+        margin-bottom: 10px;
+    }
+    
+    .sambutan-section-1 > .welcome-object-sabutan {
+        width: 90%;
+        margin: auto;
+    }
+    
+    .sambutan-section-1 > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 35px;
+        margin-bottom: 50px;
+        margin-top: 0;
+    }
+    
+    .sambutan-section-1 > h2 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 10px;
+        margin: 15px 10%;
+        font-weight: bolder;
+        padding: 5px;
+        letter-spacing: 0.5px;
+    }
+    
+    .sambutan-section-1 > a {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 15px;
+        margin: 15px 10%;
+        font-weight: bolder;
+        text-decoration: none;
+        cursor: none;
+        color: #0071E3;
+    }
+    
+    .sambutan-section-2 {
+        background-color: #F5F5F7;
+        margin-bottom: 10px;
+        padding: 20px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .sambutan-section-2 > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 40px;
+        margin-left: 5px;
+        text-align: left;
+    }
+    
+    .sambutan-section-2 > p {
+        display: none;
+    }
+    
+    .sambutan-section-2 > .sambutan-ini-untuk-image-adada {
+        display: flex;
+    }
+    
+    .sambutan-section-2 > .sambutan-ini-untuk-image-adada > img {
+        width: 40%;
+        border-radius: 20px;
+        margin-right: 15px;
+        float: left;
+    }
+    
+    .sambutan-section-2 > .sambutan-ini-untuk-image-adada > p {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 100%;
+        width: 80%;
+        text-align: left;
+    }
+    
+    .sambutan-section-2 > .sambutan-ini-untuk-image-adada > .overlay {
+        display: none;
+    }
+    
+    .sambutan-section-3 {
+        background-color: #F5F5F7;
+        margin-bottom: 10px;
+        padding: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .sambutan-section-3 > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 40px;
+        margin-left: 5px;
+        text-align: left;
+    }
+    
+    .sambutan-section-3 > .nunggucoundown > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 23px;
+        font-weight: bolder;
+        text-decoration: none;
+        cursor: none;
+        color: #0071E3;
+    }
+    
+    .sambutan-section-3 > .nunggucoundown > h2 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 10px;
+        margin: 15px 10%;        
+        font-weight: bolder;
+        padding: 5px;
+        letter-spacing: 0.5px;
+    }
+    
+    .sambutan-section-3 > p {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 13px;
+        width: 80%;
+        margin-left: 5px;
+        text-align: left;
+    }
+    
+    .sambutan-section-3 > .countdown {
+        display: flex;
+        align-content: space-around;
+        margin: 0 50px;
+    }
+    
+    .sambutan-section-3 > .countdown > div {
+        align-items: center;
+        background: #2a2a2a;
+        border-radius: 10px;
+        font-family: "fsProMedium", sans-serif;
+        font-size: 15px;
+        color: #fff;
+        flex: 1;
+        padding: 5%;
+        box-sizing: border-box;
+        margin: 50px;
+    }
+    
+    .sambutan-section-3 > .passelesaicoundown > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 25px;
+        font-weight: bolder;
+        text-decoration: none;
+        cursor: none;
+        color: #0071E3;
+    }
+    
+    .sambutan-section-3 > .passelesaicoundown > h2 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 15px;
+        margin: 15px 10%;        
+        font-weight: bolder;
+        padding: 5px;
+        letter-spacing: 0.5px;
+    }
+    
+    .sambutan-section-3 > .passelesaicoundown > .passelesaicoundowndiv {
+        display: flex;
+        align-content: space-around;
+        margin: 0 25px;
+    }
+    
+    .sambutan-section-3 > .passelesaicoundown > .passelesaicoundowndiv > div {
+        align-items: center;
+        background: #2a2a2a;
+        border-radius: 10px;
+        font-family: "fsProMedium", sans-serif;
+        font-size: 15px;
+        color: #fff;
+        flex: 1;
+        padding: 2%;
+        box-sizing: border-box;
+        margin: 50px;
+    }
+    
+    .sambutan-section-4 {
+        background-color: #F5F5F7;
+        margin-bottom: 10px;
+        padding: 10px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .sambutan-section-4 > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 25px;
+        font-weight: bolder;
+        text-decoration: none;
+        cursor: none;
+        color: #0071E3;
+    }
+    
+    .sambutan-section-4 > p {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 13px;
+        margin: 0 15%;
+    }
+    
+    .sambutan-section-4 > .container-project {
+        margin: 0;
+        width: 100%;
+        overflow-x: hidden;
+        white-space: nowrap;
+        margin-bottom: 50px;
+    }
+    
+    .sambutan-section-4 > .container-project > .item-project {
+        display: inline-block;
+        margin: 10px;
+        border-radius: 10px;
+        width: 200px;
+        background: #f4f4f4;
+        padding-bottom: 5px;
+        box-shadow: 0 0 7px #000;
+        animation: scrollLeft 30s linear infinite;
+    }
+    
+    .sambutan-section-4  > .container-project > .item-project > img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    .sambutan-section-4 > .container-project > .item-project > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 10%;
+        color: #000;
+    }
+    
+    .sambutan-section-5 {
+        background-color: #F5F5F7;
+        max-width: 100%;
+        padding: 40px;
+        box-sizing: border-box;
+    }
+    
+    .sambutan-section-5 > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 25px 15px;
+        font-weight: bolder;
+        text-decoration: none;
+        cursor: none;
+        color: #0071E3;
+    }
+    
+    .sambutan-section-5 > p {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 13px;
+        margin: 0 2%;
+    }
+    
+    .sambutan-section-5 > .suport-container {
+        display: flex;
+    }
+    
+    .sambutan-section-5 > .suport-container > .suport-item {
+        width: 25%;
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 7px #000;
+    }
+    
+    .sambutan-section-5 > .suport-container > .suport-item > img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    .sambutan-section-5 > .suport-container > .suport-item > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 14px;
+        margin: 5px;
+    }
+    
+    .passelesaicoundown2 {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #ffffff6f;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .passelesaicoundown2 > img {
+        margin: 20% auto;    
+        width: 50%;
+        filter: drop-shadow(0 0 10px #000);
+        animation: jedagjedug 5s linear infinite;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+}

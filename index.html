@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="in">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="theme-color" content="#d50900" />
+    <meta property="og:title" content="G90Nf">
+    <meta property="og:description" content="Ini adalah website resmi organisasi G90NF">
+    <meta property="og:image" content="logo.jpg">
+    <link rel="shortcut icon" href="logo3.jpg" type="image/x-icon">
+    <title>Kindor</title>
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff;
+        }
+        
+        .loading-container {
+            width: 300px;
+            height: 10px;
+            position: relative;
+            background-color: #eee;
+            border-radius: 99999px;
+            overflow: hidden;
+        }
+        
+        .loading-bar {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(to right, #e11313, #002eb1);
+            border-radius: 99999px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        img {
+            width: 200px;
+            position: absolute;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <img src="logo3.jpg" alt="image">
+    <div class="loading-container" id="loadingContainer">
+        <div class="loading-bar" id="loadingBar"></div>
+    </div>
+    
+    <script>
+        let loadingValue = 0;
+        const loadingBar = document.getElementById('loadingBar');
+        
+        function updateLoading() {
+            loadingValue += 10;
+            loadingBar.style.width = `${loadingValue}%`;
+        
+            if (loadingValue === 30) {
+                setTimeout(updateLoadingAfter30, 500);
+            } else if (loadingValue === 100) {
+                setTimeout(redirectToHome, 2700);
+            } else {
+                setTimeout(updateLoading, 500);
+            }
+        }
+        
+        function updateLoadingAfter30() {
+            loadingValue = 30;
+            loadingBar.style.width = `${loadingValue}%`;
+            setTimeout(updateLoading, 500);
+        }
+        
+        function redirectToHome() {
+            window.location.href = 'home.html';
+        }
+        
+        setTimeout(updateLoading, 50);
+    </script>
+</body>
+</html>
