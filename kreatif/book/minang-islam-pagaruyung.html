@@ -256,4 +256,41 @@ Organisasi ini di buat pada tanggal 17 Juni 2022</p>
   });
 
   //these function will call when user relase mouse button and leave mouse from nav
-  nav.addEventLis
+  nav.addEventListener("mouseup", () =>{
+    nav.removeEventListener("mousemove", onDrag);
+  });
+  nav.addEventListener("mouseleave", () =>{
+    nav.removeEventListener("mousemove", onDrag);
+  });
+        
+        
+        function showFullText(element) {
+            alert(element.innerText);
+        }
+        
+        
+        function shareButton() {
+            if (navigator.share) {
+                var keztGantengShareUrl = window.location.href;
+                var keztGantengShareJudulBuku = document.getElementById('judulBukuKreatif').textContent;
+                var keztGantengShareAuthorBuku = document.getElementById('authorBukuKreatif').textContent;
+                
+                navigator.share({
+                    title: 'G90 Kreatif - Book',
+                    text: 'G90 Kreatif - Book\n\Ayo baca buku ini pasti kamu akan suka dengan buku ini!\nName Book: ' + keztGantengShareJudulBuku + '\nAuthor: ' + keztGantengShareAuthorBuku + '\nLink: ' + keztGantengShareUrl,
+                })
+                .then(() => console.error('Shareing'))
+                .catch((error) => console.log('Failed share', error));
+            } else {
+                alert('Maaf browser anda tidak mendukung :(');
+            }
+        }
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>
