@@ -423,6 +423,49 @@ body {
         animation: jedagjedug 5s linear infinite;
     }
     
+    .tambahan-section-1 {
+        background-color: #F5F5F7;
+        max-width: 100%;
+        padding: 40px ;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    
+    .tambahan-section-1 > img {
+        width: 55%;
+        height: auto;
+        margin: auto;
+    }
+    
+    .tambahan-section-1 > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 35px;
+        margin: 5px;
+        text-align: center;
+    }
+    
+    .tambahan-section-1 > p {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 17px;
+        font-weight: bolder;
+        padding: 5px;
+        letter-spacing: 0.5px;
+        margin: 0;
+    }
+    
+    .tambahan-section-1 > a {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 14px;
+        font-weight: bolder;
+        text-decoration: none;
+        cursor: none;
+        color: #0071E3;
+        margin: 0;
+    }
+    
+    
+    
+    
     
     
     
@@ -790,7 +833,45 @@ body {
         animation: jedagjedug 5s linear infinite;
     }
     
+    .tambahan-section-1 {
+        background-color: #F5F5F7;
+        max-width: 100%;
+        padding: 40px ;
+        box-sizing: border-box;
+        margin: 0;
+    }
     
+    .tambahan-section-1 > img {
+        width: 35%;
+        height: auto;
+        margin: auto;
+    }
+    
+    .tambahan-section-1 > h1 {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 35px;
+        margin: 5px;
+        text-align: center;
+    }
+    
+    .tambahan-section-1 > p {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 17px;
+        font-weight: bolder;
+        padding: 5px;
+        letter-spacing: 0.5px;
+        margin: 0;
+    }
+    
+    .tambahan-section-1 > a {
+        font-family: "fsProMedium", sans-serif;
+        font-size: 14px;
+        font-weight: bolder;
+        text-decoration: none;
+        cursor: none;
+        color: #0071E3;
+        margin: 0;
+    }
     
     
     
