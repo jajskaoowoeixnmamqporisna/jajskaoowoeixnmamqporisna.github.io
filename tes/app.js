@@ -2,7 +2,7 @@ const fs = require('fs-extra');
 const path = require('path');
 
 // Path ke file TSV
-const tsvFilePath = path.join(__dirname, '../../tes.tsv');
+const tsvFilePath = path.join(__dirname, 'tes.tsv');
 
 module.exports = async (req, res) => {
     if (req.method !== 'POST') {
