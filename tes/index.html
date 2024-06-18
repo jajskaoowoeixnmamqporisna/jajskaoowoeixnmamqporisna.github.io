@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambahkan Teks ke TSV</title>
+</head>
+<body>
+    <h1>Tambahkan Teks ke TSV</h1>
+    <textarea id="newText" rows="5" cols="50" placeholder="Masukkan teks baru"></textarea>
+    <br><br>
+    <button onclick="addText()">Tambahkan Teks</button>
+
+    <script>
+        function addText() {
+            const newText = document.getElementById('newText').value.trim();
+            if (newText === '') {
+                alert('Masukkan teks sebelum menambahkan!');
+                return;
+            }
+
+            // Ganti URL di bawah ini dengan URL dari server Vercel Anda
+            const apiUrl = 'https://your-vercel-project.vercel.app/api/add-text';
+
+            // Kirim permintaan POST ke server Vercel untuk menambahkan teks ke TSV
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: newText }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Gagal menambahkan teks ke TSV.');
+                }
+                return response.text();
+            })
+            .then(data => {
+                alert(data); // Tampilkan pesan berhasil dari server
+                document.getElementById('newText').value = ''; // Kosongkan input teks
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan saat menambahkan teks ke TSV.');
+            });
+        }
+    </script>
+</body>
+</html>
