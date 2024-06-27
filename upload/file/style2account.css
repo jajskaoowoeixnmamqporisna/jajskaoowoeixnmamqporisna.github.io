@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Russo+One&family=Special+Elite&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font-family: "Arial", sans-serif;
+    transition: background-color 1s ease;
+}
+
+@font-face  {,
+    font-family: "fsProMedium";
+    src: url("https://g90nf.kezt.my.id/upload/file/sfpro-display-medium.otf");
+    font-weight: normal;
+}
+
+@font-face  {
+    font-family: "willow";
+    src: url("https://g90nf.kezt.my.id/upload/file/willow.ttf");
+    font-weight: normal;
+}
+
+@font-face  {
+    font-family: "Brillotus";
+    src: url("https://g90nf.kezt.my.id/upload/file/brillotus.otf");
+    font-weight: normal;
+}
+
+@keyframes shake {
+        0% { transform: rotate(0deg); }
+        25% { transform: rotate(-10deg); }
+        50% { transform: rotate(0deg); }
+        75% { transform: rotate(10deg); }
+        100% { transform: rotate(0deg); }
+}
+
+
+
+@media (max-width: 808px) {
+    
+    #section4 {
+        margin: 0;
+        padding: 0;
+    }
+
+    #section4 > p {
+        background: linear-gradient(to left, #D97BCD 0%, #2675E8 100%);
+        font-size: 35px;
+        font-family: Brillotus;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .shake {
+        animation: shake 0.12s;
+        animation-iteration-count: infinite;
+    }
+
+    #section4 > .notifikasi-container {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    #section4 > .notifikasi-container > .notification {
+        padding: 10px;
+        width: 80vw;
+        background: #cacaca;
+        color: #fff;
+        border-radius: 15px;
+        margin: 5px 0;        
+        position: relative;
+    }
+
+    #section4 > .notifikasi-container > .notification.unread > .circle {
+        width: 10px;
+        height: 10px;
+        background-color: skyblue;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    
+    #section4 > .notifikasi-container > .notification > p {
+        font-size: 15px;
+        color: #000;
+        text-align: left;
+    }
+    
+    #section4 > .notifikasi-container > .notification > .date {
+        font-size: 10px;
+        color: #999;
+        text-align: left;
+    }
+    
+    #containerProfile {
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        overflow-y: auto;
+        background: #ececec;
+    }
+    
+    #containerProfile > .header-profile {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;        
+    }
+    
+    #containerProfile > .header-profile > .label {
+        width: 20%;
+        margin: 10px;
+    }
+    
+    #containerProfile > .bagian-profile1 {
+        border-radius: 15px;
+        margin: auto;
+        background: #e0e0e07a;
+        width: 80%;
+        padding: 10px;
+    }
+    
+    #containerProfile > .bagian-profile1 > img {
+        width: 100px;
+        height: auto;
+        border-radius: 50%;
+    }
+    
+    .button-untuk-follow {
+        background: #ffffff8d;
+        border-radius: 15px;
+        border: 2px solid #000;
+        font-size: 18px;
+        font-family: fsProMedium;
+        font-weight: bold;
+        color: #000;
+        padding: 10px 20px;
+    }
+    
+    #containerProfile > .bagian-profile1 > .containerName > h1 {
+        font-size: 20px;
+        font-family: fsProMedium;
+        margin: 2px;
+    }
+    
+    #containerProfile > .bagian-profile1 > .containerName > .p1 {
+        font-size: 17px;
+        font-family: fsProMedium;
+        margin: 2px;
+    }
+    
+    #containerProfile > .bagian-profile1 > .containerName > .p2 {
+        font-size: 15px;
+        font-family: fsProMedium;
+        color: #246fda;        
+        margin: 2px;
+    }
+    
+    #containerProfile > .bagian-profile2 {
+        border-radius: 15px;
+        margin: 10px auto;
+        background: #e0e0e07a;
+        width: 80%;
+        padding: 10px;
+    }
+    
+    #containerProfile > .bagian-profile2 > p {
+        font-size: 25px;
+        font-family: fsProMedium;
+        margin: 8px;
+        text-align: left;
+    }
+    
+    #containerProfile > .bagian-profile2 > div {
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        gap: 5px;
+    }
+    
+    #containerProfile > .bagian-profile2 > div > div {
+        margin: 0;
+        background: #ffffff7c;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+    #containerProfile > .bagian-profile2 > div > div > i {
+        font-size: 30px;
+    }
+    
+    #containerProfile > .bagian-profile2 > div > div > p {
+        margin: 0;
+        font-size: 18px;
+    }
+    
+    #containerProfile > .bagian-profile3 {
+        border-radius: 15px;
+        margin: 10px auto;
+        background: #e0e0e07a;
+        width: 80%;
+        padding: 10px;
+    }
+    
+    #containerProfile > .bagian-profile3 > p {
+        font-size: 25px;
+        font-family: fsProMedium;
+        margin: 8px;
+        text-align: left;
+        display: flex;
+    }
+    
+    #containerProfile > .bagian-profile3 > p > span {
+        font-size: 25px;
+        font-family: fsProMedium;
+        text-align: left;
+        color: #246fda;
+    }
+    
+    #containerProfile > .bagian-profile3 > #contentPK {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    #containerProfile > .bagian-profile3 > #contentPK > .item {
+        flex: 1 1 47%;
+        max-width: 47%;
+        border: 2px solid #fff;
+        border-radius: 15px;
+        background: #000;
+        height: 250px;
+    }
+    
+    
+    
+    
+}
+
+@media (min-width: 808px) {
+    
+    #section4 {
+        margin: 0;
+        padding: 0;
+    }
+
+    #section4 > p {
+        background: linear-gradient(to left, #D97BCD 0%, #2675E8 100%);
+        font-size: 35px;
+        font-family: Brillotus;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .shake {
+        animation: shake 0.12s;
+        animation-iteration-count: infinite;
+    }
+
+    #section4 > .notifikasi-container {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    #section4 > .notifikasi-container > .notification {
+        padding: 10px;
+        width: 80vw;
+        background: #cacaca;
+        color: #fff;
+        border-radius: 15px;
+        margin: 5px 0;        
+        position: relative;
+    }
+
+    #section4 > .notifikasi-container > .notification.unread > .circle {
+        width: 10px;
+        height: 10px;
+        background-color: skyblue;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    
+    #section4 > .notifikasi-container > .notification > p {
+        font-size: 15px;
+        color: #000;
+        text-align: left;
+    }
+    
+    #section4 > .notifikasi-container > .notification > .date {
+        font-size: 10px;
+        color: #999;
+        text-align: left;
+    }
+    
+    #containerProfile {
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        overflow-y: auto;
+        background: #ececec;
+    }
+    
+    #containerProfile > .header-profile {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;        
+    }
+    
+    #containerProfile > .header-profile > .label {
+        width: 10%;
+        margin: 10px;
+    }
+    
+    #containerProfile > .bagian-profile1 {
+        border-radius: 15px;
+        margin: auto;
+        background: #e0e0e07a;
+        width: 70%;
+        padding: 10px;
+    }
+    
+    #containerProfile > .bagian-profile1 > img {
+        width: 100px;
+        height: auto;
+        border-radius: 50%;
+    }
+    
+    .button-untuk-follow {
+        background: #ffffff8d;
+        border-radius: 15px;
+        border: 2px solid #000;
+        font-size: 18px;
+        font-family: fsProMedium;
+        font-weight: bold;
+        color: #000;
+        padding: 10px 20px;
+    }
+    
+    #containerProfile > .bagian-profile1 > .containerName > h1 {
+        font-size: 20px;
+        font-family: fsProMedium;
+        margin: 2px;
+    }
+    
+    #containerProfile > .bagian-profile1 > .containerName > .p1 {
+        font-size: 17px;
+        font-family: fsProMedium;
+        margin: 2px;
+    }
+    
+    #containerProfile > .bagian-profile1 > .containerName > .p2 {
+        font-size: 15px;
+        font-family: fsProMedium;
+        color: #246fda;        
+        margin: 2px;
+    }
+    
+    
+    #containerProfile > .bagian-profile2 {
+        border-radius: 15px;
+        margin: 10px auto;
+        background: #e0e0e07a;
+        width: 70%;
+        padding: 10px;
+    }
+    
+    #containerProfile > .bagian-profile2 > p {
+        font-size: 25px;
+        font-family: fsProMedium;
+        margin: 8px;
+        text-align: left;
+    }
+    
+    #containerProfile > .bagian-profile2 > div {
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        gap: 5px;
+    }
+    
+    #containerProfile > .bagian-profile2 > div > div {
+        margin: 0;
+        background: #ffffff7c;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+    #containerProfile > .bagian-profile2 > div > div > i {
+        font-size: 30px;
+    }
+    
+    #containerProfile > .bagian-profile2 > div > div > p {
+        margin: 0;
+        font-size: 18px;
+    }
+    
+    #containerProfile > .bagian-profile3 {
+        border-radius: 15px;
+        margin: 10px auto;
+        background: #e0e0e07a;
+        width: 70%;
+        padding: 10px;
+    }
+    
+    #containerProfile > .bagian-profile3 > p {
+        font-size: 25px;
+        font-family: fsProMedium;
+        margin: 8px;
+        text-align: left;
+        display: flex;
+    }
+    
+    #containerProfile > .bagian-profile3 > p > span {
+        font-size: 25px;
+        font-family: fsProMedium;
+        text-align: left;
+        color: #246fda;
+    }
+    
+    #containerProfile > .bagian-profile3 > #contentPK {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    #containerProfile > .bagian-profile3 > #contentPK > .item {
+        flex: 1 1 47%;
+        max-width: 47%;
+        border: 2px solid #fff;
+        border-radius: 15px;
+        background: #000;
+        height: 250px;
+    }
+    
+    
+    
+    
+    
+    
+}
