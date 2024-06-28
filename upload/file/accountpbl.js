@@ -133,13 +133,13 @@ function setFollowCookie(userId) {
     
     document.cookie = `follow-${userId}=true; expires=${expiryDateString}; path=/`;
     updateButtonDisplay(userId);
-    alert('Anda telah mengikuti: ' + userId);
+    sistem.message.log("Mengikuti" + userId);
 }
 
 function deleteFollowCookie(userId) {
     document.cookie = `follow-${userId}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
     updateButtonDisplay(userId);
-    alert('Anda telah berhenti mengikuti: ' + userId);
+    sistem.message.log("Bergenti mengikuti" + userId);
 }
 
 function isFollowing(userId) {
@@ -158,11 +158,9 @@ function updateButtonDisplay(userId) {
     let btn = document.getElementById(`toggleFollowBtn-${userId}`);
     if (btn) {
         if (isFollowing(userId)) {
-            btn.textContent = 'Unfollow';
-            btn.style.backgroundColor = '#dc3545'; // Merah untuk unfollow
+            btn.textContent = 'Unfollow ✓';
         } else {
-            btn.textContent = 'Follow';
-            btn.style.backgroundColor = '#007bff'; // Biru untuk follow
+            btn.textContent = 'Follow +';
         }
     }
 }
