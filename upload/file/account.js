@@ -329,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 popupAllItemHeader.classList.add("popup-header-all-item");
                 
                 const removeLink = document.createElement("a");
-                removeLink.innerHTML = `<i name='ki ki-back'>`;
+                removeLink.innerHTML = `x`;
                 removeLink.href = "#";
                 removeLink.addEventListener("click", function(event) {
                     event.preventDefault();
@@ -411,8 +411,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 searchButton.addEventListener("click", performSearch);
                 searchInput.addEventListener("keypress", function(event) {
                     if (event.key === "Enter") {
-                        performSearch();
-                    }
+          }
                 });
                 
                 renderResults(rows); // Render hasil pertama kali dengan data urutan asli
@@ -434,7 +433,7 @@ document.addEventListener("DOMContentLoaded", function() {
         popupAllItemHeaderU.classList.add("popup-header-all-item");
 
         const removeLinkU = document.createElement("a");
-        removeLinkU.innerHTML = `<i name='ki ki-back'></i>`;
+        removeLinkU.innerHTML = `x`;
         removeLinkU.href = "#";
         removeLinkU.addEventListener("click", function(event) {
             event.preventDefault();
@@ -663,4 +662,3 @@ document.addEventListener("DOMContentLoaded", async function() {
         console.error("Error:", errorPK);
     }
 });
-			  
