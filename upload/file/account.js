@@ -135,7 +135,7 @@ function checkFollowStatus() {
                     fileParts = fileParts.map(part => part.replace(/&&&20/g, " ").replace(/&&&10/g, "<br>").replace(/###tiktok/g, '<i class="bi bi-tiktok"></i>'));
 
                     let lastPart = fileParts[fileParts.length - 1];
-                    if (lastPart.endsWith(".jpg") || lastPart.endsWith(".png") || lastPart.endsWith(".mp4")) {
+                    if (lastPart.endsWith(".jpg") || lastPart.endsWith(".png") || lastPart.endsWith(".jpeg")  || lastPart.endsWith(".mp4")) {
                         lastPart = lastPart.substring(0, lastPart.length - 4);
                         fileParts[fileParts.length - 1] = lastPart;
                     }
