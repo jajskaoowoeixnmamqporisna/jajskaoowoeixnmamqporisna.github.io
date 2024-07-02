@@ -641,10 +641,16 @@ document.addEventListener("DOMContentLoaded", async function() {
                         fileElement = document.createElement("img");
                         fileElement.src = fileUrl;
                         fileElement.alt = fileName;
+			fileElement.oncontextmenu = function() {
+        return false;
+    };
                     } else if (fileUrl.match(/\.mp4$/i)) {
                         fileElement = document.createElement("video");
                         fileElement.src = fileUrl;
                         fileElement.controls = true;
+			fileElement.oncontextmenu = function() {
+        return false;
+    };
                     }
 
                     if (fileElement) {
