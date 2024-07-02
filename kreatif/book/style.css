@@ -220,7 +220,6 @@ body {
     }
     
     .section-baca-buku-view > .keterangan-buku > .keterangan2 > p > .p2 {
-        transform: translateX(80%);
         font-family: fsProMedium;
         text-align: left;
         font-size: 20px;
