@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", async function() {
                     <div class="containerName">
                         <h1>${fixedUserNamePK}</h1>
                         <p class="p1">@${userIDPK}</p>
-                        <p class="p2">key : ${userProfileKeyPK}</p>
                     </div>
                     <button class="button-untuk-follow" id="toggleFollowBtn-${userIDPK}" onclick="toggleFollow('${userIDPK}')">Follow</button>
                 </div>
