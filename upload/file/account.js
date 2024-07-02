@@ -480,10 +480,10 @@ document.addEventListener("DOMContentLoaded", function() {
     uploadSection3U.appendChild(uploadBagianLayanan);
     
     document.getElementById("item1").addEventListener("click", function() {
-        uploadFileSemua('https://jsksiaokwoeoxnabwijsnsnakwkwk.tiiny.site/index.html');
+        uploadFileSemua('https://jsksiaokwoeoxnabwijsnsnakwkwk.tiiny.site/book-upload.html');
     });
     document.getElementById("item2").addEventListener("click", function() {
-        uploadFileSemua('https://jsksiaokwoeoxnabwijsnsnakwkwk.tiiny.site/book-upload.html');
+        uploadFileSemua('https://jsksiaokwoeoxnabwijsnsnakwkwk.tiiny.site/index.html');
     });
 });
 
