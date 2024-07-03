@@ -107,6 +107,7 @@ function clickReport(isiDalamForm, hehehe, g90id, nc, ac, imgName) {
     window.location.href = url;
 }
 
+
 function checkFollowStatus() {
     const followedPrefixes = [];
 
@@ -135,7 +136,7 @@ function checkFollowStatus() {
                     fileParts = fileParts.map(part => part.replace(/&&&20/g, " ").replace(/&&&10/g, "<br>").replace(/###tiktok/g, '<i class="bi bi-tiktok"></i>'));
 
                     let lastPart = fileParts[fileParts.length - 1];
-                    if (lastPart.endsWith(".jpg") || lastPart.endsWith(".png") || lastPart.endsWith(".jpeg")  || lastPart.endsWith(".mp4")) {
+                    if (lastPart.endsWith(".jpg") || lastPart.endsWith(".png") || lastPart.endsWith(".mp4")) {
                         lastPart = lastPart.substring(0, lastPart.length - 4);
                         fileParts[fileParts.length - 1] = lastPart;
                     }
@@ -157,7 +158,7 @@ function checkFollowStatus() {
             validFiles.forEach(file => {
                 const fileName = file.name;
                 const isVideo = fileName.endsWith(".mp4");
-                const mediaSrc = `https://api.github.com/g90nf/Database/main/sosialmedia/${fileName}`;
+                const mediaSrc = `https://raw.githubusercontent.com/g90nf/Database/main/sosialmedia/${fileName}`;
                 let displayContent;
 
                 if (isVideo) {
@@ -293,7 +294,6 @@ function checkFollowStatus() {
 }
 
 checkFollowStatus();
-
 
 
 
