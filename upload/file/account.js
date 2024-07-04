@@ -94,6 +94,15 @@ document.addEventListener("DOMContentLoaded", async function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+    const section1N2 = document.getElementById("section1");
+    section1N2.innerHTML = `
+        <div class="container-popup-content" id="contentHome2">
+            
+        </div>
+    `;
+});
+
+document.addEventListener("DOMContentLoaded", function() {
     const home2Container = document.getElementById("contentHome2");
     home2Container.innerHTML = `
         <div class="header-top">
