@@ -271,7 +271,7 @@ function checkFollowStatus() {
 }
 
 function displayAllContent() {
-    fetchFiles(displayContent, "content");
+    fetchFiles(displayContent, "content2");
 }
 
 
