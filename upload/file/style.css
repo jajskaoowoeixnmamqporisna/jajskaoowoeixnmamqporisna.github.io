@@ -18,6 +18,15 @@ body {
     transition: background-color 1s ease;
 }
 
+#section1 > h1 {
+    display: none;
+}
+
+
+#section1 > p {
+    display: none;
+}
+
 @font-face  {,
     font-family: "fsProMedium";
     src: url("https://g90nf.kezt.my.id/upload/file/sfpro-display-medium.otf");
