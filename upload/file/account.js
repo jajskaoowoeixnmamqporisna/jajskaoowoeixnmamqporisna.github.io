@@ -93,6 +93,23 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const home2Container = document.getElementById("contentHome2");
+    home2Container.innerHTML = `
+        <div class="header-top">
+            <h1>G90 Account - For You</h1>
+            <a href="" class="mainButtonHeader"><i class="bi bi-arrow-repeat"></i></a>
+            <a><i class="bi bi-bookmark"></i></a>
+            <a><i class="bi bi-info-circle"></i></a>
+        </div>
+        <div class="status-content" id="statusContent">
+                
+        </div>
+        <hr>
+        <div id="content2"></div>
+    `;
+});
+
 function getCookie(name) {
     const value = "; " + document.cookie;
     const parts = value.split("; " + name + "=");
@@ -107,168 +124,36 @@ function clickReport(isiDalamForm, hehehe, g90id, nc, ac, imgName) {
     window.location.href = url;
 }
 
-function checkFollowStatus() {
-    const followedPrefixes = [];
-
-    document.cookie.split(";").forEach(cookie => {
-        const parts = cookie.split("=");
-        if (parts[0].trim().startsWith("follow-") && parts[1].trim() === "true") {
-            followedPrefixes.push(parts[0].trim().substring(7));
-        }
-    });
-
+function fetchFiles(displayContentFunc, containerId) {
     fetch("https://api.github.com/repos/g90nf/Database/contents/sosialmedia")
         .then(response => response.json())
         .then(files => {
-            const contentContainer = document.getElementById("content");
+            const contentContainer = document.getElementById(containerId);
             contentContainer.innerHTML = "";
-
-            const validFiles = [];
-            const invalidFiles = [];
+            const fileObjects = [];
 
             files.forEach(file => {
                 const fileName = file.name;
                 let fileParts = fileName.split("$&$");
-                const filePrefix = fileParts[0];
+                fileParts = fileParts.map(part => part.replace(/&&&20/g, " ").replace(/&&&10/g, "<br>").replace(/###tiktok/g, '<i class="bi bi-tiktok"></i>'));
 
-                if (followedPrefixes.includes(filePrefix)) {
-                    fileParts = fileParts.map(part => part.replace(/&&&20/g, " ").replace(/&&&10/g, "<br>").replace(/###tiktok/g, '<i class="bi bi-tiktok"></i>'));
+                let lastPart = fileParts[fileParts.length - 1];
+                if (lastPart.endsWith(".jpg") || lastPart.endsWith(".png") || lastPart.endsWith(".mp4")) {
+                    lastPart = lastPart.substring(0, lastPart.length - 4);
+                    fileParts[fileParts.length - 1] = lastPart;
+                }
 
-                    let lastPart = fileParts[fileParts.length - 1];
-                    if (lastPart.endsWith(".jpg") || lastPart.endsWith(".png") || lastPart.endsWith(".jpeg")  || lastPart.endsWith(".mp4")) {
-                        lastPart = lastPart.substring(0, lastPart.length - 4);
-                        fileParts[fileParts.length - 1] = lastPart;
-                    }
-
-                    const date = new Date(fileParts[3]);
-                    if (!isNaN(date.getTime())) {
-                        file.date = date;
-                        file.parsedParts = fileParts;
-                        validFiles.push(file);
-                    } else {
-                        file.parsedParts = fileParts;
-                        invalidFiles.push(file);
-                    }
+                const date = new Date(fileParts[3]);
+                if (!isNaN(date.getTime())) {
+                    file.date = date;
+                    file.parsedParts = fileParts;
+                    fileObjects.push(file);
                 }
             });
 
-            validFiles.sort((a, b) => b.date - a.date);
+            fileObjects.sort((a, b) => b.date - a.date);
 
-            validFiles.forEach(file => {
-                const fileName = file.name;
-                const isVideo = fileName.endsWith(".mp4");
-                const mediaSrc = `https://api.github.com/g90nf/Database/main/sosialmedia/${fileName}`;
-                let displayContent;
-
-                if (isVideo) {
-                    displayContent = `
-                        <div class="item-content-home">
-                            <div class="header-item-content">
-                                <p id="username" class="username">${file.parsedParts[1]}</p>
-                            </div>
-                            <video src="${mediaSrc}" controls oncontextmenu="return false;"></video>
-                            <div class="menu-content">
-                                <div class="container-item-menu">
-                                    <i class="bi bi-heart"></i>
-                                    <span>Like</span>
-                                </div>
-                                <div class="container-item-menu">
-                                    <i class="bi bi-bookmark"></i>
-                                    <span>Favorite</span>
-                                </div>
-                                <div class="container-item-menu" onclick="clickReport('Konten mengandung aktifitas seksual', '${file.parsedParts[1]}', '8282828', '922991', '818182', '${fileName}')">
-                                    <i class="bi bi-flag"></i>
-                                    <span>Report</span>
-                                </div>
-                            </div>
-                            <p class="deskripsi">${file.parsedParts[2]}</p>
-                            <p class="date">${file.parsedParts[3]}</p>
-                        </div>
-                        <hr>`;
-                } else {
-                    displayContent = `
-                        <div class="item-content-home">
-                            <div class="header-item-content">
-                                <p id="username" class="username">${file.parsedParts[1]}</p>
-                            </div>
-                            <img src="${mediaSrc}" oncontextmenu="return false;">
-                            <div class="menu-content">
-                                <div class="container-item-menu">
-                                    <i class="bi bi-heart"></i>
-                                    <span>Like</span>
-                                </div>
-                                <div class="container-item-menu">
-                                    <i class="bi bi-bookmark"></i>
-                                    <span>Favorite</span>
-                                </div>
-                                <div class="container-item-menu" onclick="clickReport('Konten mengandung aktifitas seksual', '${file.parsedParts[1]}', '8282828', '922991', '818182', '${fileName}')">
-                                    <i class="bi bi-flag"></i>
-                                    <span>Report</span>
-                                </div>
-                            </div>
-                            <p class="deskripsi">${file.parsedParts[2]}</p>
-                            <p class="date">${file.parsedParts[3]}</p>
-                        </div>
-                        <hr>`;
-                }
-
-                contentContainer.innerHTML += displayContent;
-            });
-
-            invalidFiles.forEach(file => {
-                const fileName = file.name;
-                const isVideo = fileName.endsWith(".mp4");
-                const mediaSrc = `https://raw.githubusercontent.com/g90nf/Database/main/sosialmedia/${fileName}`;
-                let displayContent;
-
-                if (isVideo) {
-                    displayContent = `
-                        <div class="item-content-home">
-                            <div class="header-item-content">
-                                <p id="username" class="username">${file.parsedParts[1]}</p>
-                            </div>
-                            <video src="${mediaSrc}" controls oncontextmenu="return false;"></video>
-                            <div class="menu-content">
-                                <div class="container-item-menu">
-                                    <i class="bi bi-heart"></i>
-                                </div>
-                                <div class="container-item-menu">
-                                    <i class="bi bi-bookmark"></i>
-                                </div>
-                                <div class="container-item-menu" onclick="clickReport('Konten mengandung aktifitas seksual', '${file.parsedParts[1]}', '8282828', '922991', '818182', '${fileName}')">
-                                    <i class="bi bi-flag"></i>
-                                </div>
-                            </div>
-                            <p class="deskripsi">${file.parsedParts[2]}</p>
-                            <p class="date">${file.parsedParts[3]}</p>
-                        </div>
-                        <hr>`;
-                } else {
-                    displayContent = `
-                        <div class="item-content-home">
-                            <div class="header-item-content">
-                                <p id="username" class="username">${file.parsedParts[1]}</p>
-                            </div>
-                            <img src="${mediaSrc}" oncontextmenu="return false;">
-                            <div class="menu-content">
-                                <div class="container-item-menu">
-                                    <i class="bi bi-heart"></i>
-                                </div>
-                                <div class="container-item-menu">
-                                    <i class="bi bi-bookmark"></i>
-                                </div>
-                                <div class="container-item-menu" onclick="clickReport('Konten mengandung aktifitas seksual', '${file.parsedParts[1]}', '8282828', '922991', '818182', '${fileName}')">
-                                    <i class="bi bi-flag"></i>
-                                </div>
-                            </div>
-                            <p class="deskripsi">${file.parsedParts[2]}</p>
-                            <p class="date">${file.parsedParts[3]}</p>
-                        </div>
-                        <hr>`;
-                }
-
-                contentContainer.innerHTML += displayContent;
-            });
+            fileObjects.forEach(file => displayContentFunc(file, contentContainer));
 
             // Implement Intersection Observer to pause videos when they are not in view
             const videos = document.querySelectorAll("video");
@@ -284,15 +169,96 @@ function checkFollowStatus() {
                 threshold: 0.25 // Adjust the threshold as needed
             });
 
-            videos.forEach(video => {
-                observer.observe(video);
-            });
-
+            videos.forEach(video => observer.observe(video));
         })
         .catch(error => console.error("Error:", error));
 }
 
+function displayContent(file, contentContainer) {
+    const fileName = file.name;
+    const isVideo = fileName.endsWith(".mp4");
+    const mediaSrc = `https://raw.githubusercontent.com/g90nf/Database/main/sosialmedia/${fileName}`;
+    let displayContent;
+
+    if (isVideo) {
+        displayContent = `
+            <div class="item-content-home">
+                <div class="header-item-content">
+                    <p id="username" class="username">${file.parsedParts[1]}</p>
+                </div>
+                <video src="${mediaSrc}" controls oncontextmenu="return false;"></video>
+                <div class="menu-content">
+                    <div class="container-item-menu">
+                        <i class="bi bi-heart"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="container-item-menu">
+                        <i class="bi bi-bookmark"></i>
+                        <span>Favorite</span>
+                    </div>
+                    <div class="container-item-menu" onclick="clickReport('Konten mengandung aktifitas seksual', '${file.parsedParts[1]}', '8282828', '922991', '818182', '${fileName}')">
+                        <i class="bi bi-flag"></i>
+                        <span>Report</span>
+                    </div>
+                </div>
+                <p class="deskripsi">${file.parsedParts[2]}</p>
+                <p class="date">${file.parsedParts[3]}</p>
+            </div>
+            <hr>`;
+    } else {
+        displayContent = `
+            <div class="item-content-home">
+                <div class="header-item-content">
+                    <p id="username" class="username">${file.parsedParts[1]}</p>
+                </div>
+                <img src="${mediaSrc}" oncontextmenu="return false;">
+                <div class="menu-content">
+                    <div class="container-item-menu">
+                        <i class="bi bi-heart"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="container-item-menu">
+                        <i class="bi bi-bookmark"></i>
+                        <span>Favorite</span>
+                    </div>
+                    <div class="container-item-menu" onclick="clickReport('Konten mengandung aktifitas seksual', '${file.parsedParts[1]}', '8282828', '922991', '818182', '${fileName}')">
+                        <i class="bi bi-flag"></i>
+                        <span>Report</span>
+                    </div>
+                </div>
+                <p class="deskripsi">${file.parsedParts[2]}</p>
+                <p class="date">${file.parsedParts[3]}</p>
+            </div>
+            <hr>`;
+    }
+
+    contentContainer.innerHTML += displayContent;
+}
+
+function checkFollowStatus() {
+    const followedPrefixes = [];
+
+    document.cookie.split(";").forEach(cookie => {
+        const parts = cookie.split("=");
+        if (parts[0].trim().startsWith("follow-") && parts[1].trim() === "true") {
+            followedPrefixes.push(parts[0].trim().substring(7));
+        }
+    });
+
+    fetchFiles((file, contentContainer) => {
+        const filePrefix = file.parsedParts[0];
+        if (followedPrefixes.includes(filePrefix)) {
+            displayContent(file, contentContainer);
+        }
+    }, "content");
+}
+
+function displayAllContent() {
+    fetchFiles(displayContent, "content2");
+}
+
 checkFollowStatus();
+displayAllContent();
 
 
 
