@@ -93,17 +93,12 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    // First, create the content container
-    const section1N2 = document.getElementById("section1");
-    section1N2.innerHTML = `
-        <div class="container-popup-content" id="contentHome2">
-            
-        </div>
-    `;
 
-    // Now, add the inner content to the newly created container
-    const home2Container = document.getElementById("contentHome2");
+document.addEventListener("DOMContentLoaded", function() {
+    const section1N2 = document.getElementById("section1");
+    const home2Container = document.createElement("div");
+    home2Container.classList.add("container-popup-content");
+
     home2Container.innerHTML = `
         <div class="header-top">
             <h1>G90 Account - For You</h1>
@@ -111,12 +106,15 @@ document.addEventListener("DOMContentLoaded", function() {
             <a><i class="bi bi-bookmark"></i></a>
             <a><i class="bi bi-info-circle"></i></a>
         </div>
-        <div class="status-content" id="statusContent">
-                
-        </div>
+        <div class="status-content" id="statusContent"></div>
         <hr>
         <div id="content2"></div>
     `;
+
+    section1N2.appendChild(home2Container);
+
+    checkFollowStatus();
+    displayAllContent();
 });
 
 function getCookie(name) {
@@ -135,9 +133,17 @@ function clickReport(isiDalamForm, hehehe, g90id, nc, ac, imgName) {
 
 function fetchFiles(displayContentFunc, containerId) {
     fetch("https://api.github.com/repos/g90nf/Database/contents/sosialmedia")
-        .then(response => response.json())
+        .then(response => {
+            console.log("Response status:", response.status);
+            return response.json();
+        })
         .then(files => {
+            console.log("Fetched files:", files);
             const contentContainer = document.getElementById(containerId);
+            if (!contentContainer) {
+                console.error("Content container not found");
+                return;
+            }
             contentContainer.innerHTML = "";
             const fileObjects = [];
 
@@ -180,7 +186,9 @@ function fetchFiles(displayContentFunc, containerId) {
 
             videos.forEach(video => observer.observe(video));
         })
-        .catch(error => console.error("Error:", error));
+        .catch(error => {
+            console.error("Error:", error);
+        });
 }
 
 function displayContent(file, contentContainer) {
@@ -259,16 +267,12 @@ function checkFollowStatus() {
         if (followedPrefixes.includes(filePrefix)) {
             displayContent(file, contentContainer);
         }
-    }, "content");
+    }, "statusContent");
 }
 
 function displayAllContent() {
-    fetchFiles(displayContent, "content2");
+    fetchFiles(displayContent, "content");
 }
-
-checkFollowStatus();
-displayAllContent();
-
 
 
 
