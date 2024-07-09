@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
 });
 
-
 document.addEventListener("DOMContentLoaded", function() {
     const section1N2 = document.getElementById("section1");
     const home2Container = document.createElement("div");
@@ -108,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
         <div class="status-content" id="statusContent"></div>
         <hr>
-        <div id="content2"></div>
+        <div id="contentke2"></div>
     `;
 
     section1N2.appendChild(home2Container);
@@ -267,13 +266,15 @@ function checkFollowStatus() {
         if (followedPrefixes.includes(filePrefix)) {
             displayContent(file, contentContainer);
         }
-    }, "statusContent");
+    }, "content");
 }
 
 function displayAllContent() {
-    fetchFiles(displayContent, "content2");
-}
+    fetchFiles(displayContent, "contentke2");
+		}
 
+
+            
 
 
 // SistemSearch
