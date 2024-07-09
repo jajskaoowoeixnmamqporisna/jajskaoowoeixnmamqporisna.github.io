@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="in">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="theme-color" content="#e2d626"/>
+    <meta property="og:title" content="G90NF">
+    <meta property="og:description" content="Cek login Page G90NF">
+    <meta property="og:image" content="https://g90nf.kezt.my.id/upload/image/g90-kreatif-logo-16-9.jpg">
+    <link rel="shortcut icon" href="https://i.imgur.com/ggIjVZ6.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://kit.fontawesome.com/55100b01de.js" crossorigin="anonymous"></script>
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+    <title>Upload - G90 Kreatif</title>
+    <style>
+        .container-load {
+            display: grid;
+            place-items: center;
+            min-height: 100vh; /* Tinggi minimal container */
+            text-align: center;
+        }
+
+        .imageG90ID {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    
+    
+    
+    
+    <div class="container-load">
+        <img class="imageG90ID" src="https://g90nf.kezt.my.id/upload/image/j2ah8.png" alt="Images Auth Login" oncontextmenu="return false;">
+        <h1>From G90</h1>
+    </div>
+    
+    
+    
+    
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    async function fetchData() {
+        var response = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vSbc66HXqX8MQVkBUR_I4-Z0zLJMpft1WcPcSuWhZmOooDN0QlEtA8D-g9JmGlNuisyIhWgWB3DWe36/pub?output=tsv");
+        var data = await response.text();
+        return data.split("\n").slice(1).map(row => row.split("\t"));
+    }
+
+    function setCookie(name, value, days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(";");
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) === " ") c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function checkLogin() {
+        var email = getCookie("email");
+        console.log("Checking login, found email:", email);  // Add this line for debugging
+        if (email) {
+            fetchData().then(rows => {
+                var user = rows.find(row => row[0] === email);
+                if (user) {
+                    window.location.href = user[4];
+                } else {
+                    window.location.href = "../auth/sign-in.html";
+                }
+            });
+        } else {
+            window.location.href = "../auth/sign-in.html";
+        }
+    }
+
+    checkLogin();
+});
+    </script>
+    
+</body>
+</html>
